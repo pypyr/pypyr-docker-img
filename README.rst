@@ -90,3 +90,27 @@ here:
 Examples
 ========
 If you prefer reading code to reading words, https://github.com/pypyr/pypyr-example
+
+To run the examples, do this:
+
+.. code-block:: bash
+
+  # clone the pypyr-example repo
+  $ git clone git@github.com:pypyr/pypyr-example.git
+
+  # cd to the your new local repo
+  $ cd pypyr-example
+
+  # You now have a local ./pipelines dir
+  $ ls ./pipelines
+
+  # run some pipelines on your host inside the pypyr docker container,
+  # using a volume mount to get at the ./pipelines dir
+  $ docker run -v ${PWD}:/src pypyr/pypyr simple
+
+  # and this is how you pass further parameters like --context
+  # this command looks for ./pipelines/subsitutions.yaml, which is on your host.
+  $ docker run -v ${PWD}:/src pypyr/pypyr substitutions --context "key1=this is key1 in context,key2=pipe"
+
+  # one more time, with extra logging. . .
+  $ docker run -v ${PWD}:/src pypyr/pypyr substitutions --context "key1=this is key1 in context,key2=pipe" --log 10
