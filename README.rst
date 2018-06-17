@@ -51,7 +51,6 @@ in the pipeline yaml rather than as a --context argument:
 
   $ docker run pypyr/pypyr magritte
 
-Check here `pypyr.steps.echo`_ to see yaml that does this.
 
 Run a pipeline
 ==============
