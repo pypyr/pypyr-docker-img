@@ -109,7 +109,7 @@ To run the examples, do this:
   $ docker run -v ${PWD}:/src pypyr/pypyr simple
 
   # and this is how you pass further parameters like --context
-  # this command looks for ./pipelines/subsitutions.yaml, which is on your host.
+  # this command looks for ./pipelines/substitutions.yaml, which is on your host.
   $ docker run -v ${PWD}:/src pypyr/pypyr substitutions --context "key1=this is key1 in context,key2=pipe"
 
   # one more time, with extra logging. . .
