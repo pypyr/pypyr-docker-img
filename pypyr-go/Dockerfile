@@ -63,12 +63,17 @@ RUN set -eux; \
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
-RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" \
+		&& chown -R ${limiteduser}:${limiteduser} $GOPATH
+
+# don't need root anymore. downstream should only run as less permissive.
+# pypyruser created in base container. it's got a home dir for go get caching.
+# in theory, you'd switch to less permissive here. this causes a whole bunch
+# of problems with vol bind mounting though, when you're interacting w host file
+# system. Until elegant solution found, this is a dev env only container, don't
+# run in prod.
+# USER ${limiteduser}
 
 # Download and install the latest release of dep and vgo
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
 		&& go get -u golang.org/x/vgo
-
-# don't need root anymore. downstream should only run as less permissive.
-# pypyruser created in base container. it's got a home dir for go get caching.
-USER ${limiteduser}

@@ -63,6 +63,11 @@ working directory. The working dir on the container is
 `/src`
 
 ```bash
+# chances are pretty good you want to do something like this:
+# this mounts the current dir (with your go source code), and sets the working dir to the mount dir
+# you then run pipelinenamehere in this working dir as if you're in your repo home.
+$ docker run -v ${PWD}:/go/src/github.com/myrepo/myproj -w /go/src/github.com//myrepo/myproj pypyr/pypyr-go pipelinenamehere`
+
 # mount your host's current dir to the container's working dir.
 # Your host has ./pipelines/mypipelinename.yaml
 $ docker run -v ${PWD}:/src pypyr/pypyr-go mypipelinename
