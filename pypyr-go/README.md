@@ -131,7 +131,7 @@ your derived image like this:
 
 ```bash
 # this command looks for ./pipelines/mypipelinename.yaml, which is on your host.
-$ docker run myrepo/my-pypyr-child -v ${PWD}:/src pypyr/pypyr mypipelinename
+$ docker run -v ${PWD}:/src myrepo/my-pypyr-child mypipelinename
 ```
 
 ## License
