@@ -6,6 +6,9 @@
 IMAGE_NAME=${IMAGE_NAME:=${REPO}/${DEPLOYPREFIX}}
 DOCKER_REPO=${DOCKER_REPO:=${REPO}/${DEPLOYPREFIX}}
 DEPLOYPREFIX=${DEPLOYPREFIX:=$(basename "${DOCKER_REPO}")}
+
+echo ${PWD}
 # read the tags file from the image subdir
-TAGS=$(< ${DEPLOYPREFIX}/tags)
+# TAGS=$(< ${DEPLOYPREFIX}/tags)
+TAGS=$(< tags)
 docker build -t ${DOCKER_REPO}:${TAGS//,/ -t ${DOCKER_REPO}:} -f ${DOCKERFILE_PATH} .
