@@ -1,0 +1,32 @@
+#!/bin/bash -xe
+
+EXPECTED_GO='go version go1.10.3'
+EXPECTED_PYPYR='pypyr 0.8.0'
+
+# this runs on docker cloud as part of automated build, where IMAGE_NAME is set
+# for you. For local runs, initialize using vars from ops/deploy.sh, which
+# would've invoked this.
+IMAGE_NAME=${IMAGE_NAME:=${REPO}/${DEPLOYPREFIX}}
+
+# returns something like:
+# pypyr 0.8.0 python 3.6.5
+PYPYRVER=$(docker run ${IMAGE_NAME} --version)
+
+# returns something like:
+# go version go1.10.3 linux/amd64
+GOVER=$(docker run --entrypoint go ${IMAGE_NAME} version)
+
+# returns 1 if grep string not found
+if echo ${PYPYRVER} | grep -q "${EXPECTED_PYPYR}"; then
+  echo "pypyr version as expected"
+else
+  echo "pypyr version is ${PYPYRVER}. Was expecting something like: ${EXPECTED_PYPYR}"
+  exit 1
+fi
+
+if echo ${GOVER} | grep -q "${EXPECTED_GO}"; then
+  echo "go version as expected"
+else
+  echo "go version is ${GOVER}. Was expecting something like: ${EXPECTED_GO}."
+  exit 1
+fi
