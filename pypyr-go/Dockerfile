@@ -4,7 +4,7 @@
 # the WORKDIR is /src, which is the pypyr working dir. this will let you mount a
 # volume with a pipelines dir in it without hiding the go path.
 # build me like this from repo root:
-# docker build -t pypyr/pypyr-go -t pypyr/pypyr-go:latest -t pypyr/pypyr-go:1.10 -t pypyr/pypyr-go:1.10.3 --build-arg pypyrversion=0.8 --build-arg goversion=1.10.3 -f pypyr-go/Dockerfile .
+# docker build -t pypyr/pypyr-go -t pypyr/pypyr-go:latest -t pypyr/pypyr-go:1.10 -t pypyr/pypyr-go:1.10.3 -f pypyr-go/Dockerfile .
 FROM pypyr/pypyr:0.8.0
 
 ARG goversion=1.10.3
