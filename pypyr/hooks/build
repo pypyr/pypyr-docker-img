@@ -5,5 +5,7 @@
 # would've invoked this.
 IMAGE_NAME=${IMAGE_NAME:=${REPO}/${DEPLOYPREFIX}}
 DOCKER_REPO=${DOCKER_REPO:=${REPO}/${DEPLOYPREFIX}}
-TAGS=${CACHE_TAG}
+DEPLOYPREFIX=${DEPLOYPREFIX:=$(basename "${DOCKER_REPO}")}
+# read the tags file from the image subdir
+TAGS=$(< ${DEPLOYPREFIX}/tags)
 docker build -t ${DOCKER_REPO}:${TAGS//,/ -t ${DOCKER_REPO}:} -f ${DOCKERFILE_PATH} .
