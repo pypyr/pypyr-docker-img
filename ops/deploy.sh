@@ -16,7 +16,7 @@ echo "deploying: ${REPO}/${DEPLOYPREFIX}"
 read -rsp $'Press enter to continue...\n'
 
 # read the tags file from the image subdir
-TAGS=$(< ${DEPLOYPREFIX}/tags)
+TAGS="latest,$(< ${DEPLOYPREFIX}/tags)"
 
 echo the tags to apply to this image will be: ${TAGS}
 read -rsp $'Press enter to continue...\n'
