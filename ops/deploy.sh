@@ -16,19 +16,21 @@ echo "deploying: ${REPO}/${DEPLOYPREFIX}"
 read -rsp $'Press enter to continue...\n'
 
 # read the tags file from the image subdir
-TAGS="latest,$(< ${DEPLOYPREFIX}/tags)"
+TAGS=$(< ${DEPLOYPREFIX}/tags)
+TAGS_PLUS_LATEST="latest,${TAGS}"
 
-echo the tags to apply to this image will be: ${TAGS}
+echo the tags to apply to this image will be: ${TAGS_PLUS_LATEST}
 read -rsp $'Press enter to continue...\n'
 
-# ${TAGS} will look like this: latest,0.8,0.8.0
+# ${TAGS} will look like this: 0.8.0
+# ${TAGS_PLUS_LATEST} will look like this: latest,0.8.0
 # assuming no spaces
 echo will be building:
-echo docker build -t ${REPO}/${DEPLOYPREFIX}:${TAGS//,/ -t ${REPO}/${DEPLOYPREFIX}:} -f ${DEPLOYPREFIX}/Dockerfile .
+echo docker build -t ${REPO}/${DEPLOYPREFIX}:${TAGS_PLUS_LATEST//,/ -t ${REPO}/${DEPLOYPREFIX}:} -f ${DEPLOYPREFIX}/Dockerfile .
 read -rsp $'Press enter to continue...\n'
 
 # build
-docker build -t ${REPO}/${DEPLOYPREFIX}:${TAGS//,/ -t ${REPO}/${DEPLOYPREFIX}:} -f ${DEPLOYPREFIX}/Dockerfile .
+docker build -t ${REPO}/${DEPLOYPREFIX}:${TAGS_PLUS_LATEST//,/ -t ${REPO}/${DEPLOYPREFIX}:} -f ${DEPLOYPREFIX}/Dockerfile .
 
 echo "build done for ${REPO}/${DEPLOYPREFIX}"
 echo "running tests"
