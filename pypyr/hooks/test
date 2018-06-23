@@ -5,7 +5,6 @@ EXPECTED_PYPYR='pypyr 0.8.0'
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
 # would've invoked this.
-# DOCKER_REPO=${DOCKER_REPO:=${REPO}/${DEPLOYPREFIX}}
 IMAGE_NAME=${IMAGE_NAME:=${REPO}/${DEPLOYPREFIX}}
 
 # returns something like:
