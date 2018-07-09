@@ -35,11 +35,11 @@ $ docker pull pypyr/pypyr
 Run one of the built-in pipelines to get a feel for it:
 
 ```bash
-$ docker run pypyr/pypyr echo --context "echoMe=Ceci n'est pas une pipe"
+$ docker run pypyr/pypyr echo "Ceci n'est pas une pipe"
 ```
 
 You can achieve the same thing by running a pipeline where the context
-is set in the pipeline yaml rather than as a \--context argument:
+is set in the pipeline yaml rather than as a context argument:
 
 ```bash
 $ docker run pypyr/pypyr magritte
@@ -75,7 +75,7 @@ $ docker run pypyr/pypyr mypipelinename
 # run pipelines/mypipelinename.yaml with an input context. For this input to
 # be available to your pipeline you need to specify a context_parser in your
 # pipeline yaml.
-$ docker run pypyr/pypyr mypipelinename --context 'mykey=value'
+$ docker run pypyr/pypyr mypipelinename "mykey=value"
 ```
 
 ### Get cli help
@@ -107,12 +107,12 @@ $ ls ./pipelines
 # using a volume mount to get at the ./pipelines dir on the host
 $ docker run -v ${PWD}:/src pypyr/pypyr simple
 
-# and this is how you pass further parameters like --context
+# and this is how you pass further parameters like context
 # this command looks for ./pipelines/substitutions.yaml, which is on your host.
-$ docker run -v ${PWD}:/src pypyr/pypyr substitutions --context "key1=this is key1 in context,key2=pipe"
+$ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe"
 
 # one more time, with extra logging. . .
-$ docker run -v ${PWD}:/src pypyr/pypyr substitutions --context "key1=this is key1 in context,key2=pipe" --log 10
+$ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe" --log 10
 ```
 
 ### Use pypyr/pypyr as a parent image
