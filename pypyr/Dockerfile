@@ -12,7 +12,8 @@ ARG slackversion=0.3.0
 ARG limiteduser=pypyruser
 
 # install pypyr and pypyr plugins
-RUN pip install -q --no-cache-dir pypyr==${pypyrversion} pypyraws==${awsversion} pypyrslack==${slackversion} \
+RUN pip install --upgrade pip \
+    && pip install -q --no-cache-dir pypyr==${pypyrversion} pypyraws==${awsversion} pypyrslack==${slackversion} \
     && pypyr --version && pypyr magritte \
     # create pypyr user and group. no-log-init due to docker recommendation on uid bug.
     && groupadd -r ${limiteduser} \
