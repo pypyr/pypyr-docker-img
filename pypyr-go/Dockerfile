@@ -5,7 +5,7 @@
 # volume with a pipelines dir in it without hiding the go path.
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-go -t pypyr/pypyr-go:latest -t pypyr/pypyr-go:1.10 -t pypyr/pypyr-go:1.10.3 -f pypyr-go/Dockerfile .
-FROM pypyr/pypyr:0.11.0
+FROM pypyr/pypyr:1.0.0
 
 ARG goversion=1.10.3
 # username for limited user from base image
