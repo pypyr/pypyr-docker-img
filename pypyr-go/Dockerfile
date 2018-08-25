@@ -74,6 +74,5 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH" \
 # run in prod.
 # USER ${limiteduser}
 
-# Download and install the latest release of dep and vgo
-RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
-		&& go get -u golang.org/x/vgo
+# Download and install the latest release of dep
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
