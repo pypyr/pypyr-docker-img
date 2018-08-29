@@ -5,7 +5,8 @@
 # Usage
 # From repo:
 # ./ops/deploy.sh [deployprefix]
-# where deployprefix is the name of one of the image subdirs, e.g pypyr or pypyr-go
+# where deployprefix is the name of one of the image subdirs, e.g pypyr or
+# pypyr-go or pypyr-go-terraform
 
 # stop processing on any statement return != 0
 set -eu
