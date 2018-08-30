@@ -18,7 +18,7 @@ to install pypyr and/or python yourself.
 The pypyr docker image is handy for devops activities such as CI and CD: it's a
 readymade execution environment for running pipelines.
 
-This pypyr-go-terra image adds the golang runtime, development tools and terraform executabe 
+This pypyr-go-terra image adds the golang runtime, development tools and terraform executabe
 to the pypyr base image. This is handy for devops activities related to go and terraform, such as compiling
 and builder pattern orchestration.
 
@@ -114,14 +114,14 @@ $ ls ./pipelines
 
 # run some pipelines on your host inside the pypyr docker container,
 # using a volume mount to get at the ./pipelines dir on the host
-$ docker run -v ${PWD}:/src pypyr/pypyr-go-terraform simple
+$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra simple
 
 # and this is how you pass further parameters like context
 # this command looks for ./pipelines/substitutions.yaml, which is on your host.
-$ docker run -v ${PWD}:/src pypyr/pypyr-go-terraform substitutions "key1=this is key1 in context,key2=pipe"
+$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra substitutions "key1=this is key1 in context,key2=pipe"
 
 # one more time, with extra logging. . .
-$ docker run -v ${PWD}:/src pypyr/pypyr-go-terraform substitutions "key1=this is key1 in context,key2=pipe" --log 10
+$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra substitutions "key1=this is key1 in context,key2=pipe" --log 10
 ```
 
 ### Use terraform in a pipeline
@@ -134,7 +134,7 @@ steps:
 ```
 
 
-### Use pypyr/pypyr-go-terraform as a parent image
+### Use pypyr/pypyr-go-terra as a parent image
 The pypyr image has working dir `/src` and entrypoint `pypyr`. Assuming you
 don't over-ride these directives in your child image, you can keep on using
 your derived image like this:
