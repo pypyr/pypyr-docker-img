@@ -18,9 +18,9 @@ to install pypyr and/or python yourself.
 The pypyr docker image is handy for devops activities such as CI and CD: it's a
 readymade execution environment for running pipelines.
 
-This pypyr-go-terra image adds the golang runtime, development tools and terraform executabe
-to the pypyr base image. This is handy for devops activities related to go and terraform, such as compiling
-and builder pattern orchestration.
+This pypyr-go-terra image adds the golang runtime, development tools and
+terraform executable to the pypyr base image. This is handy for devops activities
+related to go and terraform, such as compiling and builder pattern orchestration.
 
 You can use the pypyr container instead of the pypyr executable, and use the
 docker volume mount option to mount your custom pipelines directory in
