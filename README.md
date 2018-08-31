@@ -15,6 +15,9 @@ You can use the various pypyr containers instead of the pypyr executable, and
 use the docker volume mount option to mount your custom pipelines directory in
 the container.
 
+## Official docker hub
+You can find these images published to the public docker hub registry here:
+https://hub.docker.com/r/pypyr/
 
 ## Documentation & source-code
 Find pypyr help documentation, instructions and full source code here:
