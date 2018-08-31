@@ -29,6 +29,11 @@ this image as a drop-in replacement for the pypyr executable.
 Adds the golang runtime and development tools to the pypyr base image. This is
 handy for devops activities related to go.
 
+### pypyr-go-terra
+The golang runtime, development tools and terraform executable with the pypyr
+base image. This is handy for devops activities related to go and terraform,
+such as compiling and builder pattern orchestration.
+
 ## Contribute
 ### Can I contribute?
 The usual jazz - create an issue, fork, code, test, PR. It might be an idea to
