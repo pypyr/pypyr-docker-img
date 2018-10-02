@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.11'
+EXPECTED_GO='go version go1.11.1'
 EXPECTED_PYPYR='pypyr 1.0.0'
 EXPECTED_TERRAFORM='Terraform v0.11.8'
 
@@ -42,4 +42,3 @@ else
   echo "terraform version is ${TERRAFORMVER}. Was expecting something like: ${EXPECTED_TERRAFORM}."
   exit 1
 fi
-
