@@ -37,6 +37,12 @@ The golang runtime, development tools and terraform executable with the pypyr
 base image. This is handy for devops activities related to go and terraform,
 such as compiling and builder pattern orchestration.
 
+### pypyr-ops
+The golang runtime, development tools, terraform executable, awscli, aws-iam-authenticator
+and kubectl with the pypyr base image. This is handy for devops activities related to
+go, terraform, awscli and kubernetes.
+
+
 ## Contribute
 ### Can I contribute?
 The usual jazz - create an issue, fork, code, test, PR. It might be an idea to
