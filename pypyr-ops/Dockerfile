@@ -22,5 +22,4 @@ RUN  apt-get update && apt-get install -y apt-transport-https; \
          mv terraform /usr/local/bin; \
          rm -f terraform_${terraformversion}_linux_amd64.zip; \
          pip install awscli==${awsversion}; \
-         mv ~/.local/bin/aws /usr/local/bin; \
          go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator
