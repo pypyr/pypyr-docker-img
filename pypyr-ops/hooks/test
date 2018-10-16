@@ -10,8 +10,6 @@ EXPECTED_AWS='aws-cli/1.16.34'
 # would've invoked this.
 IMAGE_NAME=${IMAGE_NAME:=${REPO}/${DEPLOYPREFIX}}
 
-export IMAGE_NAME="pypyr/pypyr-ops:latest"
-
 # returns something like:
 # pypyr 0.8.0 python 3.6.5
 PYPYRVER=$(docker run ${IMAGE_NAME} --version)
