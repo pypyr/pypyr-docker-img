@@ -18,9 +18,9 @@ to install pypyr and/or python yourself.
 The pypyr docker image is handy for devops activities such as CI and CD: it's a
 readymade execution environment for running pipelines.
 
-This pypyr-ops image adds the golang runtime, development tools and
-terraform executable to the pypyr base image. This is handy for devops activities
-related to go, terraform, awscli, aws-iam-authenticator and kubectl, such as compiling and builder pattern orchestration.
+This pypyr-ops image is handy for devops activities related to go, terraform,
+awscli, aws-iam-authenticator and kubectl, such as compiling and builder pattern
+orchestration.
 
 You can use the pypyr container instead of the pypyr executable, and use the
 docker volume mount option to mount your custom pipelines directory in
@@ -28,8 +28,8 @@ the container.
 
 
 ## Installed Packages
-* [Go 1.11.1](https://golang.org/)
-* [Terraform v0.11.8](https://terraform.io)
+* [go 1.11.1](https://golang.org/)
+* [terraform v0.11.8](https://terraform.io)
 * [awscli 1.16.34](https://aws.amazon.com/cli/)
 * [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator)
 * [kubectl](https://kubernetes.io/)
@@ -142,9 +142,12 @@ steps:
 
 
 ### Use aws in a pipeline
-You can interact with aws using the [pypyr-aws plug-in](https://github.com/pypyr/pypyr-aws). This allows you to use any aws api functionality directly in a pipeline without having to go via the cli.
+You can interact with aws using the [pypyr-aws plug-in](https://github.com/pypyr/pypyr-aws).
+This allows you to use any aws api functionality directly in a pipeline without
+having to go via the cli.
 
-For aws functions that are only in the cli and not in the api, you can still use the aws cli in a pipeline like this:
+For aws functions that are only in the cli and not in the api, you can still use
+the aws cli in a pipeline like this:
 ```
 steps:
  name: pypyr.steps.safeshell
