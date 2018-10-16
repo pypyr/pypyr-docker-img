@@ -135,8 +135,8 @@ $ docker run -v ${PWD}:/src pypyr/pypyr-ops substitutions "key1=this is key1 in 
 You can use terraform in a pipeline like this:
 ```
 steps:
- name: pypyr.steps.safeshell
-  in:
+ - name: pypyr.steps.safeshell
+   in:
     cmd: terraform --version
 ```
 
@@ -150,8 +150,8 @@ For aws functions that are only in the cli and not in the api, you can still use
 the aws cli in a pipeline like this:
 ```
 steps:
- name: pypyr.steps.safeshell
-  in:
+ - name: pypyr.steps.safeshell
+   in:
     cmd: aws --version
 ```
 
@@ -159,8 +159,8 @@ steps:
 You can use terraform in a pipeline like this:
 ```
 steps:
- name: pypyr.steps.safeshell
-  in:
+ - name: pypyr.steps.safeshell
+   in:
     cmd: kubectl version
 ```
 
