@@ -10,7 +10,7 @@ FROM pypyr/pypyr-go:pypyr1.1.1-go1.11.1
 
 ARG terraformversion=0.11.8
 
-ARG awsversion=1.16.34
+ARG awsversion=1.16.37
 
 RUN  apt-get update && apt-get install -y apt-transport-https; \
         wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip; \
