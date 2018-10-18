@@ -51,5 +51,6 @@ if [ $(git tag -l "${TAG_NAME}") ]; then
 else
     echo "version tag doesn't exist. create tag. ${TAG_NAME}"
     git tag "${TAG_NAME}"
+    git push
     git push origin --tags
 fi;

@@ -73,12 +73,12 @@ $ docker run -v ${PWD}:/go/src/github.com/myrepo/myproj -w /go/src/github.com//m
 $ docker run -v ${PWD}:/src pypyr/pypyr-go mypipelinename
 
 # run container's /src/pipelines/mypipelinename.yaml with DEBUG logging level.
-$ docker run pypyr/pypyr-go mypipelinename --log 10
+$ docker run pypyr/pypyr-go mypipelinename --logl 10
 
 # run container /src/cpipelines/mypipelinename.yaml with INFO logging level.
-$ docker run pypyr/pypyr-go mypipelinename --log 20
+$ docker run pypyr/pypyr-go mypipelinename --logl 20
 
-# If you don't specify --log it defaults to 20 - INFO logging level.
+# If you don't specify --logl it defaults to 20 - INFO logging level.
 $ docker run pypyr/pypyr-go mypipelinename
 
 # run pipelines/mypipelinename.yaml with an input context. For this input to
@@ -121,7 +121,7 @@ $ docker run -v ${PWD}:/src pypyr/pypyr-go simple
 $ docker run -v ${PWD}:/src pypyr/pypyr-go substitutions "key1=this is key1 in context,key2=pipe"
 
 # one more time, with extra logging. . .
-$ docker run -v ${PWD}:/src pypyr/pypyr-go substitutions "key1=this is key1 in context,key2=pipe" --log 10
+$ docker run -v ${PWD}:/src pypyr/pypyr-go substitutions "key1=this is key1 in context,key2=pipe" --logl 10
 ```
 
 ### Use pypyr/pypyr-go as a parent image

@@ -64,12 +64,12 @@ working directory. The working dir on the container is
 $ docker run -v ${PWD}:/src pypyr/pypyr mypipelinename
 
 # run container's /src/pipelines/mypipelinename.yaml with DEBUG logging level.
-$ docker run pypyr/pypyr mypipelinename --log 10
+$ docker run pypyr/pypyr mypipelinename --logl 10
 
 # run container /src/cpipelines/mypipelinename.yaml with INFO logging level.
-$ docker run pypyr/pypyr mypipelinename --log 20
+$ docker run pypyr/pypyr mypipelinename --logl 20
 
-# If you don't specify --log it defaults to 20 - INFO logging level.
+# If you don't specify --logl it defaults to 20 - INFO logging level.
 $ docker run pypyr/pypyr mypipelinename
 
 # run pipelines/mypipelinename.yaml with an input context. For this input to
@@ -112,7 +112,7 @@ $ docker run -v ${PWD}:/src pypyr/pypyr simple
 $ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe"
 
 # one more time, with extra logging. . .
-$ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe" --log 10
+$ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe" --logl 10
 ```
 
 ### Use pypyr/pypyr as a parent image
