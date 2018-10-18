@@ -33,3 +33,5 @@ echo "git commit updating ${OLD} to ${NEW}"
 read -rsp $'Press enter to continue...\n'
 
 git commit -am "pypyr ${OLD} → ${NEW}"
+
+echo "!!!! update pypyr-ops/tags by hand !!!"
