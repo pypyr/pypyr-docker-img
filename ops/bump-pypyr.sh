@@ -27,6 +27,7 @@ sed -i "s/pypyr ${OLD}/pypyr ${NEW}/" ./*/hooks/test
 
 # all Dockerfiles except for the base pypyr
 sed -i "s#pypyr/pypyr:${OLD}#pypyr/pypyr:${NEW}#" ./pypyr-*/Dockerfile
+sed -i "s#:pypyr${OLD}#:pypyr${NEW}#" ./pypyr-*/Dockerfile
 
 echo "git commit updating ${OLD} to ${NEW}"
 read -rsp $'Press enter to continue...\n'
