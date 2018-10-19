@@ -28,9 +28,9 @@ the container.
 
 
 ## Installed Packages
-* [go 1.11.1](https://golang.org/)
-* [terraform v0.11.8](https://terraform.io)
-* [awscli 1.16.34](https://aws.amazon.com/cli/)
+* [go](https://golang.org/)
+* [terraform](https://terraform.io)
+* [awscli](https://aws.amazon.com/cli/)
 * [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator)
 * [kubectl](https://kubernetes.io/)
 
