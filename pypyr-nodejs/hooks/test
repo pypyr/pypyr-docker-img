@@ -1,0 +1,51 @@
+#!/bin/bash -xe
+
+EXPECTED_PYPYR='pypyr 1.2.1'
+EXPECTED_NODE='v10.13.0'
+EXPECTED_NPM='6.4.1'
+EXPECTED_YARN='1.10.1'
+
+
+# this runs on docker cloud as part of automated build, where IMAGE_NAME is set
+# for you. For local runs, initialize using vars from ops/deploy.sh, which
+# would've invoked this.
+IMAGE_NAME=${IMAGE_NAME:=${REPO}/${DEPLOYPREFIX}}
+
+# returns something like:
+# pypyr 0.8.0 python 3.6.5
+PYPYRVER=$(docker run ${IMAGE_NAME} --version)
+NODEVER=$(docker run --entrypoint node ${IMAGE_NAME} -v)
+NPMVER=$(docker run --entrypoint npm ${IMAGE_NAME} -v)
+YARNVER=$(docker run --entrypoint yarn ${IMAGE_NAME} -v)
+
+# returns 1 if grep string not found
+if echo ${PYPYRVER} | grep -q "${EXPECTED_PYPYR}"; then
+  echo "pypyr version as expected"
+else
+  echo "pypyr version is ${PYPYRVER}. Was expecting something like: ${EXPECTED_PYPYR}"
+  exit 1
+fi
+
+# returns 1 if grep string not found
+if echo ${NODEVER} | grep -q "${EXPECTED_NODE}"; then
+  echo "node version as expected"
+else
+  echo "node version is ${NODEVER}. Was expecting something like: ${EXPECTED_NODE}"
+  exit 1
+fi
+
+# returns 1 if grep string not found
+if echo ${NPMVER} | grep -q "${EXPECTED_NPM}"; then
+  echo "npm version as expected"
+else
+  echo "npm version is ${NPMVER}. Was expecting something like: ${EXPECTED_NPM}"
+  exit 1
+fi
+
+# returns 1 if grep string not found
+if echo ${YARNVER} | grep -q "${EXPECTED_YARN}"; then
+  echo "yarn version as expected"
+else
+  echo "yarn version is ${YARNVER}. Was expecting something like: ${EXPECTED_YARN}"
+  exit 1
+fi
