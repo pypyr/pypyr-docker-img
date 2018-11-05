@@ -6,9 +6,9 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-go-terraform -t pypyr/pypyr-go-terraform:latest -t pypyr/pypyr-go-terraform:0.11 -t pypyr/pypyr-go-terraform:0.11.8 -f pypyr-go-terraform/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr1.2.0-go1.11.2
+FROM pypyr/pypyr-go:pypyr1.2.1-go1.11.2
 
-ARG terraformversion=0.11.8
+ARG terraformversion=0.11.10
 
 RUN wget https://releases.hashicorp.com/terraform/0.11.8/terraform_${terraformversion}_linux_amd64.zip; \
          apt-get update && apt-get install -y unzip; \
