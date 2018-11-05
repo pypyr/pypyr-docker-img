@@ -3,7 +3,7 @@
 ## 1.2.0            
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 1.2.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 1.2.1             | https://github.com/pypyr/pypyr-cli                                     |
 | go                    | 1.11.2            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.10           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.47           | https://aws.amazon.com/cli/                                            |
