@@ -1,9 +1,10 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.11.1'
-EXPECTED_PYPYR='pypyr 1.1.1'
-EXPECTED_TERRAFORM='Terraform v0.11.8'
-EXPECTED_AWS='aws-cli/1.16.37'
+EXPECTED_GO='go version go1.11.2'
+EXPECTED_PYPYR='pypyr 1.2.1'
+EXPECTED_TERRAFORM='Terraform v0.11.10'
+EXPECTED_AWS='aws-cli/1.16.48'
+EXPECTED_DOCKER='18.06.1-ce'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
@@ -25,6 +26,16 @@ TERRAFORMVER=$(docker run --entrypoint terraform ${IMAGE_NAME} --version)
 # returns something like:
 # aws-cli/1.16.34 Python/3.7.0 Linux/4.9.93-linuxkit-aufs botocore/1.12.24
 AWSVER=$(docker run --entrypoint aws ${IMAGE_NAME} --version)
+
+# returns something like:
+# Version:           18.06.1-ce
+# API version:       1.38
+# Go version:        go1.10.3
+# Git commit:        e68fc7a
+# Built:             Tue Aug 21 17:20:43 2018
+# OS/Arch:           linux/amd64
+# Experimental:      false
+# DOCKERVER=$(docker run -p --entrypoint docker ${IMAGE_NAME} version)
 
 # returns 1 if grep string not found
 if echo ${PYPYRVER} | grep -q "${EXPECTED_PYPYR}"; then
@@ -54,3 +65,10 @@ else
   echo "aws version is ${AWSVER}. Was expecting something like: ${EXPECTED_AWS}."
   exit 1
 fi
+
+#if echo ${DOCKERVER} | grep -q "${EXPECTED_DOCKER}"; then
+#  echo "docker version as expected"
+#else
+#  echo "docker version is ${DOCKERVER}. Was expecting something like: ${EXPECTED_DOCKER}."
+#  exit 1
+#fi

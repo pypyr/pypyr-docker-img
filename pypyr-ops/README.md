@@ -19,7 +19,7 @@ The pypyr docker image is handy for devops activities such as CI and CD: it's a
 readymade execution environment for running pipelines.
 
 This pypyr-ops image is handy for devops activities related to go, terraform,
-awscli, aws-iam-authenticator and kubectl, such as compiling and builder pattern
+awscli, aws-iam-authenticator, kubectl and docker, such as compiling and builder pattern
 orchestration.
 
 You can use the pypyr container instead of the pypyr executable, and use the
@@ -33,6 +33,7 @@ the container.
 * [awscli](https://aws.amazon.com/cli/)
 * [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator)
 * [kubectl](https://kubernetes.io/)
+* [docker](https://www.docker.com/)
 
 ## Installation
 
@@ -156,12 +157,21 @@ steps:
 ```
 
 ### Use kubectl in a pipeline
-You can use terraform in a pipeline like this:
+You can use kubectl in a pipeline like this:
 ```
 steps:
  - name: pypyr.steps.safeshell
    in:
     cmd: kubectl version
+```
+
+### Use docker in a pipeline
+You can use docker in a pipeline like this:
+```
+steps:
+ - name: pypyr.steps.safeshell
+   in:
+    cmd: docker version
 ```
 
 
