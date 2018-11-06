@@ -5,6 +5,7 @@ EXPECTED_PYPYR='pypyr 1.2.1'
 EXPECTED_TERRAFORM='Terraform v0.11.10'
 EXPECTED_AWS='aws-cli/1.16.48'
 EXPECTED_DOCKER='18.06.1-ce'
+EXPECTED_KUBECTL='v1.12.0'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
@@ -35,7 +36,13 @@ AWSVER=$(docker run --entrypoint aws ${IMAGE_NAME} --version)
 # Built:             Tue Aug 21 17:20:43 2018
 # OS/Arch:           linux/amd64
 # Experimental:      false
-# DOCKERVER=$(docker run -p --entrypoint docker ${IMAGE_NAME} version)
+DOCKERVER=$(docker run --entrypoint docker ${IMAGE_NAME} version) || true
+
+# returns something like:
+# Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.0",
+# GitCommit:"0ed33881dc4355495f623c6f22e7dd0b7632b7c0", GitTreeState:"clean",
+# BuildDate:"2018-09-27T17:05:32Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
+KUBECTLVER=$(docker run --entrypoint kubectl ${IMAGE_NAME} version) || true
 
 # returns 1 if grep string not found
 if echo ${PYPYRVER} | grep -q "${EXPECTED_PYPYR}"; then
@@ -66,9 +73,16 @@ else
   exit 1
 fi
 
-#if echo ${DOCKERVER} | grep -q "${EXPECTED_DOCKER}"; then
-#  echo "docker version as expected"
-#else
-#  echo "docker version is ${DOCKERVER}. Was expecting something like: ${EXPECTED_DOCKER}."
-#  exit 1
-#fi
+if echo ${DOCKERVER} | grep -q "${EXPECTED_DOCKER}"; then
+  echo "docker version as expected"
+else
+  echo "docker version is ${DOCKERVER}. Was expecting something like: ${EXPECTED_DOCKER}."
+  exit 1
+fi
+
+if echo ${KUBECTLVER} | grep -q "${EXPECTED_KUBECTL}"; then
+  echo "kubectl version as expected"
+else
+  echo "kubectl version is ${KUBECTLVER}. Was expecting something like: ${EXPECTED_KUBECTL}."
+  exit 1
+fi
