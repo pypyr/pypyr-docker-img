@@ -28,4 +28,7 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
          chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl && \
          curl -LO  https://download.docker.com/linux/static/stable/x86_64/docker-${dockerversion}.tgz && \
          tar xzvf docker-${dockerversion}.tgz && \
-         chmod +x ./docker/* && mv ./docker/* /usr/local/bin/ && rm -f docker-${dockerversion}.tgz && rm -rf docker/
+         chmod +x ./docker/* && \
+         mv ./docker/* /usr/local/bin/ && \
+         rm -f docker-${dockerversion}.tgz && \
+         rm -rf docker/
