@@ -38,8 +38,8 @@ base image. This is handy for devops activities related to go and terraform,
 such as compiling and builder pattern orchestration.
 
 ### pypyr-ops
-The golang runtime, development tools, terraform executable, awscli, aws-iam-authenticator
-and kubectl with the pypyr base image. This is handy for devops activities related to
+The golang runtime, development tools, terraform executable, awscli, aws-iam-authenticator,
+ kubectl and docker with the pypyr base image. This is handy for devops activities related to
 go, terraform, awscli and kubernetes.
 
 
