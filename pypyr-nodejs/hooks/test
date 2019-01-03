@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-EXPECTED_PYPYR='pypyr 2.0.0'
+EXPECTED_PYPYR='pypyr 2.1.0'
 EXPECTED_NODE='v10.14.2'
 EXPECTED_NPM='6.5.0'
 EXPECTED_YARN='1.12.3'
