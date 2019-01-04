@@ -43,14 +43,8 @@ echo "tests done"
 # git tag is pypyr-latest,0.1,0.1.1
 TAG_NAME="${DEPLOYPREFIX}-${TAGS}"
 
-echo about to create and push git tag: ${TAG_NAME}
+echo about to push to docker repos: ${TAG_NAME}
 read -rsp $'Press enter to continue...\n'
 
-if [ $(git tag -l "${TAG_NAME}") ]; then
-    echo "----------tag already exists.----------------------------------------"
-else
-    echo "version tag doesn't exist. create tag. ${TAG_NAME}"
-    git tag "${TAG_NAME}"
-    git push
-    git push origin --tags
-fi;
+docker push ${REPO}/${DEPLOYPREFIX}:latest
+docker push ${REPO}/${DEPLOYPREFIX}:${TAGS}
