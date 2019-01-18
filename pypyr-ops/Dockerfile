@@ -10,11 +10,11 @@ FROM pypyr/pypyr-go:pypyr2.2.0-go1.11.4
 
 ARG terraformversion=0.11.11
 
-ARG awsversion=1.16.81
+ARG awsversion=1.16.91
 
-ARG kubeversion=v1.13.1
+ARG kubeversion=v1.13.2
 
-ARG dockerversion=18.09.0
+ARG dockerversion=18.09.1
 
 RUN  apt-get update && apt-get install -y apt-transport-https &&\
         wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip && \
