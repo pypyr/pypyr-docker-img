@@ -1,9 +1,20 @@
 # changelog
 
+## 3.3.0 2019/01/24
+| tool                  |   version         | link                                                                   |
+| --------------------- |-------------------|------------------------------------------------------------------------|
+| pypyr                 | 2.3.0             | https://github.com/pypyr/pypyr-cli                                     |
+| go                    | 1.11.5            | https://golang.org/doc/go1.11                                          |
+| terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
+| awscli                | 1.16.94           | https://aws.amazon.com/cli/                                            |
+| kubectl               | 1.13.2            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md |
+| aws-iam-authenticator | 0.4.0-alpha1      | https://github.com/kubernetes-sigs/aws-iam-authenticator               |
+| docker                | 18.09.1           | https://www.docker.com/                                                |
+
 ## 3.2.0 2019/01/18
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.2.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.2.0             | https://github.com/pypyr/pypyr-cli                                     |
 | go                    | 1.11.4            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.91           | https://aws.amazon.com/cli/                                            |

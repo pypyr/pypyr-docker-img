@@ -1,9 +1,9 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.11.4'
+EXPECTED_GO='go version go1.11.5'
 EXPECTED_PYPYR='pypyr 2.3.0'
 EXPECTED_TERRAFORM='Terraform v0.11.11'
-EXPECTED_AWS='aws-cli/1.16.91'
+EXPECTED_AWS='aws-cli/1.16.94'
 EXPECTED_DOCKER='18.09.1'
 EXPECTED_KUBECTL='v1.13.2'
 
