@@ -6,7 +6,7 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr2.2.0-go1.11.4
+FROM pypyr/pypyr-go:pypyr2.3.0-go1.11.4
 
 ARG terraformversion=0.11.11
 
