@@ -10,7 +10,7 @@ FROM pypyr/pypyr-go:pypyr2.5.0-go1.11.5
 
 ARG terraformversion=0.11.11
 
-ARG awsversion=1.16.94
+ARG awsversion=1.16.96
 
 ARG kubeversion=v1.13.2
 
