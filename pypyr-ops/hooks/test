@@ -3,9 +3,9 @@
 EXPECTED_GO='go version go1.11.5'
 EXPECTED_PYPYR='pypyr 2.6.0'
 EXPECTED_TERRAFORM='Terraform v0.11.11'
-EXPECTED_AWS='aws-cli/1.16.96'
+EXPECTED_AWS='aws-cli/1.16.100'
 EXPECTED_DOCKER='18.09.1'
-EXPECTED_KUBECTL='v1.13.2'
+EXPECTED_KUBECTL='v1.13.3'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
