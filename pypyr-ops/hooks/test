@@ -1,10 +1,11 @@
 #!/bin/bash -xe
 
 EXPECTED_GO='go version go1.11.5'
+EXPECTED_HELM='v2.12.3'
 EXPECTED_PYPYR='pypyr 2.6.0'
 EXPECTED_TERRAFORM='Terraform v0.11.11'
-EXPECTED_AWS='aws-cli/1.16.100'
-EXPECTED_DOCKER='18.09.1'
+EXPECTED_AWS='aws-cli/1.16.105'
+EXPECTED_DOCKER='18.09.2'
 EXPECTED_KUBECTL='v1.13.3'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
@@ -19,6 +20,10 @@ PYPYRVER=$(docker run ${IMAGE_NAME} --version)
 # returns something like:
 # go version go1.10.3 linux/amd64
 GOVER=$(docker run --entrypoint go ${IMAGE_NAME} version)
+
+# returns something like:
+# Client: &version.Version{SemVer:“v2.0.0”, GitCommit:“ff52399e51bb880526e9cd0ed8386f6433b74da1”, GitTreeState:“clean”}
+HELMVER=$(docker run --entrypoint helm ${IMAGE_NAME} version --client)
 
 # returns something like:
 #Terraform v0.11.8
@@ -42,7 +47,7 @@ DOCKERVER=$(docker run --entrypoint docker ${IMAGE_NAME} version) || true
 # Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.0",
 # GitCommit:"0ed33881dc4355495f623c6f22e7dd0b7632b7c0", GitTreeState:"clean",
 # BuildDate:"2018-09-27T17:05:32Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
-KUBECTLVER=$(docker run --entrypoint kubectl ${IMAGE_NAME} version) || true
+KUBECTLVER=$(docker run --entrypoint kubectl ${IMAGE_NAME} version --client) || true
 
 # returns 1 if grep string not found
 if echo ${PYPYRVER} | grep -q "${EXPECTED_PYPYR}"; then
@@ -56,6 +61,13 @@ if echo ${GOVER} | grep -q "${EXPECTED_GO}"; then
   echo "go version as expected"
 else
   echo "go version is ${GOVER}. Was expecting something like: ${EXPECTED_GO}."
+  exit 1
+fi
+
+if echo ${HELMVER} | grep -q "${EXPECTED_HELM}"; then
+  echo "helm version as expected"
+else
+  echo "helm version is ${HELMVER}. Was expecting something like: ${EXPECTED_HELM}."
   exit 1
 fi
 

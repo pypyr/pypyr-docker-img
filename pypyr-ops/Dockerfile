@@ -10,11 +10,13 @@ FROM pypyr/pypyr-go:pypyr2.6.0-go1.11.5
 
 ARG terraformversion=0.11.11
 
-ARG awsversion=1.16.100
+ARG awsversion=1.16.105
 
 ARG kubeversion=v1.13.3
 
-ARG dockerversion=18.09.1
+ARG helmversion=v2.12.3
+
+ARG dockerversion=18.09.2
 
 RUN  apt-get update && apt-get install -y apt-transport-https &&\
         wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip && \
@@ -31,4 +33,5 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
          chmod +x ./docker/* && \
          mv ./docker/* /usr/local/bin/ && \
          rm -f docker-${dockerversion}.tgz && \
-         rm -rf docker/
+         rm -rf docker/ && \
+         curl -o get-helm https://raw.githubusercontent.com/helm/helm/master/scripts/get && bash ./get-helm --version ${helmversion} && rm -f ./get-helm
