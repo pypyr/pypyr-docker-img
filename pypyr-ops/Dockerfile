@@ -6,11 +6,11 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr2.6.0-go1.11.5
+FROM pypyr/pypyr-go:pypyr2.6.0-go1.12
 
 ARG terraformversion=0.11.11
 
-ARG awsversion=1.16.105
+ARG awsversion=1.16.112
 
 ARG kubeversion=v1.13.3
 
