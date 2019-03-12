@@ -1,5 +1,21 @@
 # changelog
 
+## 4.0.0 2019/03/12
+| tool                  |   version         | link                                                                   |
+| --------------------- |-------------------|------------------------------------------------------------------------|
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| go                    | 1.12              | https://golang.org/doc/go1.12                                          |
+| helm                  | 2.13.0            | https://github.com/helm                                                |
+| terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
+| awscli                | 1.16.122          | https://aws.amazon.com/cli/                                            |
+| kubectl               | 1.13.4            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md |
+| aws-iam-authenticator | 0.4.0-alpha1      | https://github.com/kubernetes-sigs/aws-iam-authenticator               |
+| docker                | 18.09.3           | https://www.docker.com/                                                |
+| nodejs                | 10.15.3           | https://nodejs.org/en/                                                 |
+| npm                   | 6.9.0             | https://www.npmjs.com/                                                 |
+| yarn                  | 1.13.0            | https://yarnpkg.com/en/                                                |
+
+
 ## 3.8.0 2019/02/26
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|

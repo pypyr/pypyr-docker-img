@@ -34,6 +34,9 @@ the container.
 * [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator)
 * [kubectl](https://kubernetes.io/)
 * [docker](https://www.docker.com/)
+* [nodejs](https://nodejs.org/en/)
+* [npm](https://www.npmjs.com/)
+* [yarn](https://yarnpkg.com/en/)
 
 ## Installation
 
