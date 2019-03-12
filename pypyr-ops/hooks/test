@@ -1,12 +1,15 @@
 #!/bin/bash -xe
 
 EXPECTED_GO='go version go1.12'
-EXPECTED_HELM='v2.12.3'
+EXPECTED_HELM='v2.13.0'
 EXPECTED_PYPYR='pypyr 2.6.0'
-EXPECTED_TERRAFORM='Terraform v0.11.11'
-EXPECTED_AWS='aws-cli/1.16.112'
-EXPECTED_DOCKER='18.09.2'
-EXPECTED_KUBECTL='v1.13.3'
+EXPECTED_TERRAFORM='Terraform v0.11.13'
+EXPECTED_AWS='aws-cli/1.16.122'
+EXPECTED_DOCKER='18.09.3'
+EXPECTED_KUBECTL='v1.13.4'
+EXPECTED_NODE='v10.15.3'
+EXPECTED_NPM='6.9.0'
+EXPECTED_YARN='1.13.0'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
@@ -48,6 +51,11 @@ DOCKERVER=$(docker run --entrypoint docker ${IMAGE_NAME} version) || true
 # GitCommit:"0ed33881dc4355495f623c6f22e7dd0b7632b7c0", GitTreeState:"clean",
 # BuildDate:"2018-09-27T17:05:32Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
 KUBECTLVER=$(docker run --entrypoint kubectl ${IMAGE_NAME} version --client) || true
+
+NODEVER=$(docker run --entrypoint node ${IMAGE_NAME} -v)
+NPMVER=$(docker run --entrypoint npm ${IMAGE_NAME} -v)
+YARNVER=$(docker run --entrypoint yarn ${IMAGE_NAME} -v)
+
 
 # returns 1 if grep string not found
 if echo ${PYPYRVER} | grep -q "${EXPECTED_PYPYR}"; then
@@ -96,5 +104,30 @@ if echo ${KUBECTLVER} | grep -q "${EXPECTED_KUBECTL}"; then
   echo "kubectl version as expected"
 else
   echo "kubectl version is ${KUBECTLVER}. Was expecting something like: ${EXPECTED_KUBECTL}."
+  exit 1
+fi
+
+
+# returns 1 if grep string not found
+if echo ${NODEVER} | grep -q "${EXPECTED_NODE}"; then
+  echo "node version as expected"
+else
+  echo "node version is ${NODEVER}. Was expecting something like: ${EXPECTED_NODE}"
+  exit 1
+fi
+
+# returns 1 if grep string not found
+if echo ${NPMVER} | grep -q "${EXPECTED_NPM}"; then
+  echo "npm version as expected"
+else
+  echo "npm version is ${NPMVER}. Was expecting something like: ${EXPECTED_NPM}"
+  exit 1
+fi
+
+# returns 1 if grep string not found
+if echo ${YARNVER} | grep -q "${EXPECTED_YARN}"; then
+  echo "yarn version as expected"
+else
+  echo "yarn version is ${YARNVER}. Was expecting something like: ${EXPECTED_YARN}"
   exit 1
 fi
