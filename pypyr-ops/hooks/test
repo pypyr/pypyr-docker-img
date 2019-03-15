@@ -7,6 +7,8 @@ EXPECTED_TERRAFORM='Terraform v0.11.13'
 EXPECTED_AWS='aws-cli/1.16.122'
 EXPECTED_DOCKER='18.09.3'
 EXPECTED_KUBECTL='v1.13.4'
+# well this is great. seems spin version 1.5.3 erroniously gives its version no as 1.5.2.
+EXPECTED_SPIN='version 1.5.2'
 EXPECTED_NODE='v10.15.3'
 EXPECTED_NPM='6.9.0'
 EXPECTED_YARN='1.13.0'
@@ -52,6 +54,10 @@ DOCKERVER=$(docker run --entrypoint docker ${IMAGE_NAME} version) || true
 # BuildDate:"2018-09-27T17:05:32Z", GoVersion:"go1.10.4", Compiler:"gc", Platform:"linux/amd64"}
 KUBECTLVER=$(docker run --entrypoint kubectl ${IMAGE_NAME} version --client) || true
 
+# returns something like:
+# version 1.5.3
+SPINVER=$(docker run --entrypoint spin ${IMAGE_NAME} --version)
+
 NODEVER=$(docker run --entrypoint node ${IMAGE_NAME} -v)
 NPMVER=$(docker run --entrypoint npm ${IMAGE_NAME} -v)
 YARNVER=$(docker run --entrypoint yarn ${IMAGE_NAME} -v)
@@ -90,6 +96,13 @@ if echo ${AWSVER} | grep -q "${EXPECTED_AWS}"; then
   echo "aws version as expected"
 else
   echo "aws version is ${AWSVER}. Was expecting something like: ${EXPECTED_AWS}."
+  exit 1
+fi
+
+if echo ${SPINVER} | grep -q "${EXPECTED_SPIN}"; then
+  echo "spin version as expected"
+else
+  echo "spin version is ${SPINVER}. Was expecting something like: ${EXPECTED_SPIN}."
   exit 1
 fi
 

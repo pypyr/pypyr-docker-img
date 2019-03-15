@@ -24,6 +24,8 @@ ARG NPM_VERSION=6.9.0
 
 ARG YARN_VERSION=1.13.0
 
+ARG spinversion=1.5.3
+
 RUN  apt-get update && apt-get install -y apt-transport-https &&\
         wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip && \
          apt-get update && apt-get install -y unzip &&\
@@ -41,6 +43,9 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
          rm -f docker-${dockerversion}.tgz && \
          rm -rf docker/ && \
          curl -o get-helm https://raw.githubusercontent.com/helm/helm/master/scripts/get && bash ./get-helm --version ${helmversion} && rm -f ./get-helm && \
+         curl -LO https://storage.googleapis.com/spinnaker-artifacts/spin/${spinversion}/linux/amd64/spin && \
+         chmod +x spin && \
+         mv spin /usr/local/bin/spin && \
          ARCH= && dpkgArch="$(dpkg --print-architecture)" \
            && case "${dpkgArch##*-}" in \
              amd64) ARCH='x64';; \
