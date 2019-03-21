@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-EXPECTED_PYPYR='pypyr 2.6.0'
+EXPECTED_PYPYR='pypyr 2.7.0'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
