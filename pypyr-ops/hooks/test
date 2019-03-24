@@ -4,7 +4,7 @@ EXPECTED_GO='go version go1.12.1'
 EXPECTED_HELM='v2.13.0'
 EXPECTED_PYPYR='pypyr 2.8.0'
 EXPECTED_TERRAFORM='Terraform v0.11.13'
-EXPECTED_AWS='aws-cli/1.16.122'
+EXPECTED_AWS='aws-cli/1.16.130'
 EXPECTED_DOCKER='18.09.3'
 EXPECTED_KUBECTL='v1.13.4'
 # well this is great. seems spin version 1.5.3 erroniously gives its version no as 1.5.2.
