@@ -1,17 +1,16 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.12.1'
-EXPECTED_HELM='v2.13.0'
+EXPECTED_GO='go version go1.12.2'
+EXPECTED_HELM='v2.13.1'
 EXPECTED_PYPYR='pypyr 2.8.0'
 EXPECTED_TERRAFORM='Terraform v0.11.13'
-EXPECTED_AWS='aws-cli/1.16.130'
-EXPECTED_DOCKER='18.09.3'
-EXPECTED_KUBECTL='v1.13.4'
-# well this is great. seems spin version 1.5.3 erroniously gives its version no as 1.5.2.
-EXPECTED_SPIN='version 1.5.2'
+EXPECTED_AWS='aws-cli/1.16.140'
+EXPECTED_DOCKER='18.09.4'
+EXPECTED_KUBECTL='v1.14.0'
+EXPECTED_SPIN='version 1.6.0'
 EXPECTED_NODE='v10.15.3'
 EXPECTED_NPM='6.9.0'
-EXPECTED_YARN='1.13.0'
+EXPECTED_YARN='1.15.2'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which

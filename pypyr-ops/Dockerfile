@@ -6,25 +6,25 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr2.8.0-go1.12.1
+FROM pypyr/pypyr-go:pypyr2.8.0-go1.12.2
 
 ARG terraformversion=0.11.13
 
-ARG awsversion=1.16.130
+ARG awsversion=1.16.140
 
-ARG kubeversion=v1.13.4
+ARG kubeversion=v1.14.0
 
-ARG helmversion=v2.13.0
+ARG helmversion=v2.13.1
 
-ARG dockerversion=18.09.3
+ARG dockerversion=18.09.4
 
 ARG NODE_VERSION=10.15.3
 
 ARG NPM_VERSION=6.9.0
 
-ARG YARN_VERSION=1.13.0
+ARG YARN_VERSION=1.15.2
 
-ARG spinversion=1.5.3
+ARG spinversion=1.6.0
 
 RUN  apt-get update && apt-get install -y apt-transport-https &&\
         wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip && \
