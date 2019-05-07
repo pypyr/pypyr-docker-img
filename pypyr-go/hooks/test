@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.12.2'
+EXPECTED_GO='go version go1.12.5'
 EXPECTED_PYPYR='pypyr 2.8.0'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
