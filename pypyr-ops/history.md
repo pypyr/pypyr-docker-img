@@ -1,5 +1,22 @@
 # changelog
 
+## 4.6.0 2019/05/24
+| tool                  |   version         | link                                                                   |
+| --------------------- |-------------------|------------------------------------------------------------------------|
+| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr-cli                                     |
+| go                    | 1.12.5            | https://golang.org/doc/go1.12                                          |
+| helm                  | 2.13.1            | https://github.com/helm                                                |
+| terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
+| awscli                | 1.16.166          | https://aws.amazon.com/cli/                                            |
+| kubectl               | 1.14.1            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md |
+| aws-iam-authenticator | 0.4.0             | https://github.com/kubernetes-sigs/aws-iam-authenticator               |
+| docker                | 18.09.6           | https://www.docker.com/                                                |
+| docker-compose        | 1.24.0            | https://www.docker.com/                                                |
+| nodejs                | 10.15.3           | https://nodejs.org/en/                                                 |
+| npm                   | 6.9.0             | https://www.npmjs.com/                                                 |
+| yarn                  | 1.13.0            | https://yarnpkg.com/en/                                                |
+| spin                  | 1.7.1             | https://www.spinnaker.io/guides/spin/cli/                              |
+
 ## 4.5.0 2019/05/07
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|

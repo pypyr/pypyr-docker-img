@@ -10,13 +10,15 @@ FROM pypyr/pypyr-go:pypyr2.8.0-go1.12.5
 
 ARG terraformversion=0.11.13
 
-ARG awsversion=1.16.153
+ARG awsversion=1.16.166
 
 ARG kubeversion=v1.14.1
 
 ARG helmversion=v2.13.1
 
 ARG dockerversion=18.09.6
+
+ARG dockercompose_version=1.24.0
 
 ARG NODE_VERSION=10.15.3
 
@@ -42,6 +44,7 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
          mv ./docker/* /usr/local/bin/ && \
          rm -f docker-${dockerversion}.tgz && \
          rm -rf docker/ && \
+         pip install docker-compose==${dockercompose_version} && \
          curl -o get-helm https://raw.githubusercontent.com/helm/helm/master/scripts/get && bash ./get-helm --version ${helmversion} && rm -f ./get-helm && \
          curl -LO https://storage.googleapis.com/spinnaker-artifacts/spin/${spinversion}/linux/amd64/spin && \
          chmod +x spin && \
