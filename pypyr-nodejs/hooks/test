@@ -2,7 +2,7 @@
 
 EXPECTED_PYPYR='pypyr 2.10.0'
 EXPECTED_NODE='v10.16.0'
-EXPECTED_NPM='6.9.0'
+EXPECTED_NPM='6.10.0'
 EXPECTED_YARN='1.16.0'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
