@@ -11,7 +11,7 @@ pypyr is a command line interface to run pipelines defined in yaml.
 Think of pypyr as a simple task runner that lets you run sequential
 steps.
 
-The pypyr docker image contains the pypyr cli and the official plug-ins.
+The pypyr-ops docker image contains the pypyr cli and the official plug-ins.
 You can use the pypyr docker image to run pypyr pipelines without having
 to install pypyr and/or python yourself.
 
@@ -19,7 +19,7 @@ The pypyr docker image is handy for devops activities such as CI and CD: it's a
 readymade execution environment for running pipelines.
 
 This pypyr-ops image is handy for devops activities related to go, terraform,
-awscli, aws-iam-authenticator, kubectl and docker, such as compiling and builder pattern
+awscli, kubernetes and docker, such as compiling and builder pattern
 orchestration.
 
 You can use the pypyr container instead of the pypyr executable, and use the
@@ -29,13 +29,15 @@ the container.
 
 ## Installed Packages
 * [go](https://golang.org/)
-* [terraform](https://terraform.io)
 * [awscli](https://aws.amazon.com/cli/)
-* [aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator)
-* [kubectl](https://kubernetes.io/)
 * [docker](https://www.docker.com/)
+* [docker-compose](https://docs.docker.com/compose/)
+* [helm](https://github.com/helm/)
+* [kubectl](https://kubernetes.io/)
 * [nodejs](https://nodejs.org/en/)
 * [npm](https://www.npmjs.com/)
+* [spin cli](https://www.spinnaker.io/guides/spin/cli/)
+* [terraform](https://terraform.io)
 * [yarn](https://yarnpkg.com/en/)
 
 ## Installation

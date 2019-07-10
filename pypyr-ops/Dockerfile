@@ -6,23 +6,23 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr2.10.0-go1.12.6
+FROM pypyr/pypyr-go:pypyr2.10.0-go1.12.7
 
-ARG terraformversion=0.12.2
+ARG terraformversion=0.12.3
 
-ARG awsversion=1.16.178
+ARG awsversion=1.16.195
 
-ARG kubeversion=v1.14.3
+ARG kubeversion=v1.15.0
 
 ARG helmversion=v2.14.1
 
-ARG dockerversion=18.09.6
+ARG dockerversion=18.09.7
 
-ARG dockercompose_version=1.24.0
+ARG dockercompose_version=1.24.1
 
 ARG NODE_VERSION=10.16.0
 
-ARG NPM_VERSION=6.9.0
+ARG NPM_VERSION=6.10.0
 
 ARG YARN_VERSION=1.16.0
 
@@ -35,7 +35,6 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
          mv terraform /usr/local/bin && \
          rm -f terraform_${terraformversion}_linux_amd64.zip && \
          pip install awscli==${awsversion} && \
-         go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator && \
          curl -LO https://storage.googleapis.com/kubernetes-release/release/${kubeversion}/bin/linux/amd64/kubectl && \
          chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl && \
          curl -LO  https://download.docker.com/linux/static/stable/x86_64/docker-${dockerversion}.tgz && \
