@@ -8,23 +8,23 @@
 
 FROM pypyr/pypyr-go:pypyr2.11.0-go1.12.7
 
-ARG terraformversion=0.12.3
+ARG terraformversion=0.12.6
 
-ARG awsversion=1.16.195
+ARG awsversion=1.16.212
 
-ARG kubeversion=v1.15.0
+ARG kubeversion=v1.15.2
 
-ARG helmversion=v2.14.1
+ARG helmversion=v2.14.3
 
-ARG dockerversion=18.09.7
+ARG dockerversion=19.03.1
 
 ARG dockercompose_version=1.24.1
 
-ARG NODE_VERSION=10.16.0
+ARG NODE_VERSION=10.16.1
 
-ARG NPM_VERSION=6.10.0
+ARG NPM_VERSION=6.10.3
 
-ARG YARN_VERSION=1.16.0
+ARG YARN_VERSION=1.17.3
 
 ARG spinversion=1.7.2
 
