@@ -1,6 +1,6 @@
 # pypyr official docker images: pypyr-go-terra
 
-![pypyr pipeline runner](https://cdn.345.systems/wp-content/uploads/2017/03/pypyr-logo-small.png)
+![pypyr pipeline runner](https://pypyr.io/images/pypyr-logo-small.png)
 
 > *pypyr*
 >
