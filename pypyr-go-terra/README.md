@@ -58,9 +58,7 @@ https://github.com/pypyr/pypyr-docker-img
 
 ### Run a pipeline
 
-pypyr assumes a `pipelines` directory in your current
-working directory. The working dir on the container is
-`/src`
+The working dir on the container is `/src`
 
 ```bash
 # chances are pretty good you want to do something like this:
@@ -69,22 +67,22 @@ working directory. The working dir on the container is
 $ docker run -v ${PWD}:/go/src/github.com/myrepo/myproj -w /go/src/github.com//myrepo/myproj pypyr/pypyr-go-terra pipelinenamehere`
 
 # mount your host's current dir to the container's working dir.
-# Your host has ./pipelines/mypipelinename.yaml
+# Your host has ./mypipelinename.yaml
 $ docker run -v ${PWD}:/src pypyr/pypyr-go-terra mypipelinename
 
-# run container's /src/pipelines/mypipelinename.yaml with DEBUG logging level.
+# run container's /src/mypipelinename.yaml with DEBUG logging level.
 $ docker run pypyr/pypyr-go-terra mypipelinename --logl 10
 
-# run container /src/cpipelines/mypipelinename.yaml with INFO logging level.
+# run container /src/mypipelinename.yaml with INFO logging level.
 $ docker run pypyr/pypyr-go-terra mypipelinename --logl 20
 
 # If you don't specify --logl it defaults to 20 - INFO logging level.
 $ docker run pypyr/pypyr-go-terra mypipelinename
 
-# run pipelines/mypipelinename.yaml with an input context. For this input to
+# run ./mypipelinename.yaml with an input context. For this input to
 # be available to your pipeline you need to specify a context_parser in your
 # pipeline yaml.
-$ docker run pypyr/pypyr-go-terra mypipelinename "mykey=value"
+$ docker run pypyr/pypyr-go-terra mypipelinename mykey=value
 ```
 
 ### Get cli help
@@ -118,10 +116,10 @@ $ docker run -v ${PWD}:/src pypyr/pypyr-go-terra simple
 
 # and this is how you pass further parameters like context
 # this command looks for ./pipelines/substitutions.yaml, which is on your host.
-$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra substitutions "key1=this is key1 in context,key2=pipe"
+$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra substitutions key1="this is key1 in context" key2=pipe
 
 # one more time, with extra logging. . .
-$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra substitutions "key1=this is key1 in context,key2=pipe" --logl 10
+$ docker run -v ${PWD}:/src pypyr/pypyr-go-terra substitutions key1="this is key1 in context" key2=pipe --logl 10
 ```
 
 ### Use terraform in a pipeline
@@ -140,7 +138,7 @@ don't over-ride these directives in your child image, you can keep on using
 your derived image like this:
 
 ```bash
-# this command looks for ./pipelines/mypipelinename.yaml, which is on your host.
+# this command looks for ./mypipelinename.yaml, which is on your host.
 $ docker run -v ${PWD}:/src myrepo/my-pypyr-child mypipelinename
 ```
 

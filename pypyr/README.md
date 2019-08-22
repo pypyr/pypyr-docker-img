@@ -35,7 +35,7 @@ $ docker pull pypyr/pypyr
 Run one of the built-in pipelines to get a feel for it:
 
 ```bash
-$ docker run pypyr/pypyr echo "Ceci n'est pas une pipe"
+$ docker run pypyr/pypyr echo Ceci n'est pas une pipe
 ```
 
 You can achieve the same thing by running a pipeline where the context
@@ -54,28 +54,26 @@ https://github.com/pypyr/pypyr-docker-img
 
 ### Run a pipeline
 
-pypyr assumes a `pipelines` directory in your current
-working directory. The working dir on the container is
-`/src`
+The working dir on the container is `/src`
 
 ```bash
 # mount your host's current dir to the container's working dir.
-# Your host has ./pipelines/mypipelinename.yaml
+# Your host has ./mypipelinename.yaml
 $ docker run -v ${PWD}:/src pypyr/pypyr mypipelinename
 
-# run container's /src/pipelines/mypipelinename.yaml with DEBUG logging level.
+# run container's /src/mypipelinename.yaml with DEBUG logging level.
 $ docker run pypyr/pypyr mypipelinename --logl 10
 
-# run container /src/cpipelines/mypipelinename.yaml with INFO logging level.
+# run container /src/mypipelinename.yaml with INFO logging level.
 $ docker run pypyr/pypyr mypipelinename --logl 20
 
 # If you don't specify --logl it defaults to 20 - INFO logging level.
 $ docker run pypyr/pypyr mypipelinename
 
-# run pipelines/mypipelinename.yaml with an input context. For this input to
+# run host ./mypipelinename.yaml with an input context. For this input to
 # be available to your pipeline you need to specify a context_parser in your
 # pipeline yaml.
-$ docker run pypyr/pypyr mypipelinename "mykey=value"
+$ docker run pypyr/pypyr mypipelinename mykey=value
 ```
 
 ### Get cli help
@@ -109,10 +107,10 @@ $ docker run -v ${PWD}:/src pypyr/pypyr simple
 
 # and this is how you pass further parameters like context
 # this command looks for ./pipelines/substitutions.yaml, which is on your host.
-$ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe"
+$ docker run -v ${PWD}:/src pypyr/pypyr substitutions key1="this is key1 in context" key2=pipe
 
 # one more time, with extra logging. . .
-$ docker run -v ${PWD}:/src pypyr/pypyr substitutions "key1=this is key1 in context,key2=pipe" --logl 10
+$ docker run -v ${PWD}:/src pypyr/pypyr substitutions key1="this is key1 in context" key2=pipe --logl 10
 ```
 
 ### Use pypyr/pypyr as a parent image
@@ -124,7 +122,7 @@ don't over-ride these directives in your child image, you can keep on using
 your derived image like this:
 
 ```bash
-# this command looks for ./pipelines/mypipelinename.yaml, which is on your host.
+# this command looks for ./mypipelinename.yaml, which is on your host.
 $ docker run myrepo/my-pypyr-child -v ${PWD}:/src pypyr/pypyr mypipelinename
 ```
 
