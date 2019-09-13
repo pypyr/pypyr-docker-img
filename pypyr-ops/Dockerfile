@@ -6,17 +6,17 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr3.0.1-go1.12.9
+FROM pypyr/pypyr-go:pypyr3.0.1-go1.13.0
 
-ARG terraformversion=0.12.6
+ARG terraformversion=0.12.8
 
-ARG awsversion=1.16.223
+ARG awsversion=1.16.238
 
 ARG kubeversion=v1.15.3
 
 ARG helmversion=v2.14.3
 
-ARG dockerversion=19.03.1
+ARG dockerversion=19.03.2
 
 ARG dockercompose_version=1.24.1
 
