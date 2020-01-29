@@ -1,6 +1,22 @@
 # changelog
 
-## 5.0.1 2019/09/13
+## 5.2.0 2020/01/21
+| tool                  |   version         | link                                                                   |
+| --------------------- |-------------------|------------------------------------------------------------------------|
+| pypyr                 | 3.0.3             | https://github.com/pypyr/pypyr-cli                                     |
+| go                    | 1.13.7            | https://golang.org/doc/go1.13                                          |
+| helm                  | 3.0.2             | https://github.com/helm                                                |
+| terraform             | 0.12.20           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
+| awscli                | 1.17.9            | https://aws.amazon.com/cli/                                            |
+| kubectl               | 1.17.2            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.17.md |
+| docker                | 19.03.5           | https://www.docker.com/                                                |
+| docker-compose        | 1.25.3            | https://www.docker.com/                                                |
+| nodejs                | 12.14.1           | https://nodejs.org/en/                                                 |
+| npm                   | 6.13.7            | https://www.npmjs.com/                                                 |
+| yarn                  | 1.21.1            | https://yarnpkg.com/en/                                                |
+| spin                  | 1.14.0             | https://www.spinnaker.io/guides/spin/cli/                              |
+
+## 5.1.0 2019/09/13
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
 | pypyr                 | 3.0.1             | https://github.com/pypyr/pypyr-cli                                     |

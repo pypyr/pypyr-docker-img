@@ -6,27 +6,27 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr3.0.3-go1.13.0
+FROM pypyr/pypyr-go:pypyr3.0.3-go1.13.7
 
-ARG terraformversion=0.12.8
+ARG terraformversion=0.12.20
 
-ARG awsversion=1.16.238
+ARG awsversion=1.17.9
 
-ARG kubeversion=v1.15.3
+ARG kubeversion=v1.17.2
 
-ARG helmversion=v2.14.3
+ARG helmversion=v3.0.2
 
-ARG dockerversion=19.03.2
+ARG dockerversion=19.03.5
 
-ARG dockercompose_version=1.24.1
+ARG dockercompose_version=1.25.3
 
-ARG NODE_VERSION=10.16.3
+ARG NODE_VERSION=12.14.1
 
-ARG NPM_VERSION=6.11.1
+ARG NPM_VERSION=6.13.7
 
-ARG YARN_VERSION=1.17.3
+ARG YARN_VERSION=1.21.1
 
-ARG spinversion=1.7.2
+ARG spinversion=1.14.0
 
 RUN  apt-get update && apt-get install -y apt-transport-https &&\
         wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip && \
@@ -84,5 +84,5 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
            && tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 --no-same-owner \
            && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
            && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
-           && npm install -g npm@${NPM_VERSION} \
-           && npm install -g yarn@${YARN_VERSION}
+             && npm install -g npm@${NPM_VERSION} \
+             && npm install -g yarn@${YARN_VERSION}
