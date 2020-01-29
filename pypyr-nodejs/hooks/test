@@ -1,9 +1,9 @@
 #!/bin/bash -xe
 
 EXPECTED_PYPYR='pypyr 3.0.3'
-EXPECTED_NODE='v10.16.3'
-EXPECTED_NPM='6.11.3'
-EXPECTED_YARN='1.17.3'
+EXPECTED_NODE='v12.14.1'
+EXPECTED_NPM='6.13.7'
+EXPECTED_YARN='1.21.1'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
