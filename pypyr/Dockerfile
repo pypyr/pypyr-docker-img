@@ -1,9 +1,9 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr -t pypyr/pypyr:latest -t pypyr/pypyr:0.8 -t pypyr/pypyr:0.8.0 -f pypyr/Dockerfile .
 # 3-stretch implies release versions >=3.6.5
-FROM python:3-stretch
+FROM python:3-buster
 # version of pypyr to install. This version must exist on pypi.
-ARG pypyrversion=3.0.2
+ARG pypyrversion=3.0.3
 # awsversion: version of pypyraws to install. This version must exist on pypi.
 ARG awsversion=1.1.0
 # slackversion: version of pypyrslack to install. This version must exist on pypi.
