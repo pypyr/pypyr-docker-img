@@ -1,4 +1,4 @@
-FROM pypyr/pypyr:3.0.3
+FROM pypyr/pypyr:3.1.0
 
 ARG NODE_VERSION=12.14.1
 ARG NPM_VERSION=6.13.7
