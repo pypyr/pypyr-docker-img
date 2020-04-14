@@ -1,13 +1,29 @@
 # changelog
 
+## 5.4.1 2020/04/14
+| tool                  |   version         | link                                                                   |
+| --------------------- |-------------------|------------------------------------------------------------------------|
+| pypyr                 | 3.2.1             | https://github.com/pypyr/pypyr-cli                                     |
+| go                    | 1.14.2            | https://golang.org/doc/go1.14                                          |
+| helm                  | 3.1.2             | https://github.com/helm                                                |
+| terraform             | 0.12.24           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
+| awscli                | 1.18.39           | https://aws.amazon.com/cli/                                            |
+| kubectl               | 1.18.1            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.17.md |
+| docker                | 19.03.8           | https://www.docker.com/                                                |
+| docker-compose        | 1.25.5            | https://www.docker.com/                                                |
+| nodejs                | 12.16.2           | https://nodejs.org/en/                                                 |
+| npm                   | 6.14.4            | https://www.npmjs.com/                                                 |
+| yarn                  | 1.22.4            | https://yarnpkg.com/en/                                                |
+| spin                  | 1.14.0            | https://www.spinnaker.io/guides/spin/cli/                              |
+
 ## 5.4.0 2020/04/04
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
 | pypyr                 | 3.2.0             | https://github.com/pypyr/pypyr-cli                                     |
-| go                    | 1.14.1            | https://golang.org/doc/go1.13                                          |
+| go                    | 1.14.1            | https://golang.org/doc/go1.14                                          |
 | helm                  | 3.1.2             | https://github.com/helm                                                |
 | terraform             | 0.12.24           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
-| awscli                | 1.17.9            | https://aws.amazon.com/cli/                                            |
+| awscli                | 1.18.36           | https://aws.amazon.com/cli/                                            |
 | kubectl               | 1.18.0            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.17.md |
 | docker                | 19.03.8           | https://www.docker.com/                                                |
 | docker-compose        | 1.25.4            | https://www.docker.com/                                                |
