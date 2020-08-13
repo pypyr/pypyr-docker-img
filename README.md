@@ -1,6 +1,6 @@
 # pypyr official docker images
 
-![pypyr pipeline runner](https://pypyr.io/images/pypyr-logo-small.png)
+![pypyr task-runner](https://pypyr.io/images/2x1/pypyr-taskrunner-yaml-pipeline-automation-1200x600.1bd2401e4f8071d85bcb1301128e4717f0f54a278e91c9c350051191de9d22c0.png)
 
 > *pypyr*
 >
@@ -21,7 +21,7 @@ https://hub.docker.com/r/pypyr/
 
 ## Documentation & source-code
 Find pypyr help documentation, instructions and full source code here:
-https://github.com/pypyr/pypyr-cli
+https://github.com/pypyr/pypyr
 
 ## Images
 ### pypyr

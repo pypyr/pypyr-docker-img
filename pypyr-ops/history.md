@@ -3,7 +3,7 @@
 ## 5.4.1 2020/04/14
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 3.2.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 3.2.1             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.14.2            | https://golang.org/doc/go1.14                                          |
 | helm                  | 3.1.2             | https://github.com/helm                                                |
 | terraform             | 0.12.24           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -19,7 +19,7 @@
 ## 5.4.0 2020/04/04
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 3.2.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 3.2.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.14.1            | https://golang.org/doc/go1.14                                          |
 | helm                  | 3.1.2             | https://github.com/helm                                                |
 | terraform             | 0.12.24           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -35,7 +35,7 @@
 ## 5.3.0 2020/02/11
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 3.1.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 3.1.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.13.7            | https://golang.org/doc/go1.13                                          |
 | helm                  | 3.0.2             | https://github.com/helm                                                |
 | terraform             | 0.12.20           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -51,7 +51,7 @@
 ## 5.2.0 2020/01/21
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 3.0.3             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 3.0.3             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.13.7            | https://golang.org/doc/go1.13                                          |
 | helm                  | 3.0.2             | https://github.com/helm                                                |
 | terraform             | 0.12.20           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -67,7 +67,7 @@
 ## 5.1.0 2019/09/13
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 3.0.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 3.0.1             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.13.0            | https://golang.org/doc/go1.13                                          |
 | helm                  | 2.14.3            | https://github.com/helm                                                |
 | terraform             | 0.12.8            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -83,7 +83,7 @@
 ## 5.0.0 2019/08/22
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 3.0.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 3.0.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.9            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.14.3            | https://github.com/helm                                                |
 | terraform             | 0.12.6            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -99,7 +99,7 @@
 ## 4.10.0 2019/0806
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.11.0            | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.11.0            | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.7            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.14.3            | https://github.com/helm                                                |
 | terraform             | 0.12.6            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -116,7 +116,7 @@
 ## 4.9.0 2019/07/10
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.10.0            | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.10.0            | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.7            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.14.1            | https://github.com/helm                                                |
 | terraform             | 0.12.3            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -133,7 +133,7 @@
 ## 4.8.0 2019/06/14
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.9.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.9.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.6            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.14.1            | https://github.com/helm                                                |
 | terraform             | 0.12.2            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -150,7 +150,7 @@
 ## 4.7.0 2019/06/14
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.6            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.14.1            | https://github.com/helm                                                |
 | terraform             | 0.12.2            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -167,7 +167,7 @@
 ## 4.6.0 2019/05/24
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.5            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.1            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -184,7 +184,7 @@
 ## 4.5.0 2019/05/07
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.5            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.1            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -200,7 +200,7 @@
 ## 4.4.0 2019/04/06
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.2            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.1            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -216,7 +216,7 @@
 ## 4.3.0 2019/03/24
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.8.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.1            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.0            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -232,7 +232,7 @@
 ## 4.2.0 2019/03/21
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.7.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.7.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.1            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.0            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -248,7 +248,7 @@
 ## 4.1.0 2019/03/15
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.1            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.0            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -264,7 +264,7 @@
 ## 4.0.1 2019/03/15
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12.1            | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.0            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -279,7 +279,7 @@
 ## 4.0.0 2019/03/12
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12              | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.13.0            | https://github.com/helm                                                |
 | terraform             | 0.11.13           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -295,7 +295,7 @@
 ## 3.8.0 2019/02/26
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.12              | https://golang.org/doc/go1.12                                          |
 | helm                  | 2.12.3            | https://github.com/helm                                                |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -307,7 +307,7 @@
 ## 3.7.0 2019/02/15
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.5            | https://golang.org/doc/go1.11                                          |
 | helm                  | 2.12.3            | https://github.com/helm                                                |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
@@ -319,7 +319,7 @@
 ## 3.6.0 2019/01/24
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.6.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.5            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.100          | https://aws.amazon.com/cli/                                            |
@@ -330,7 +330,7 @@
 ## 3.5.0 2019/01/24
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.5.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.5.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.5            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.96           | https://aws.amazon.com/cli/                                            |
@@ -341,7 +341,7 @@
 ## 3.4.0 2019/01/24
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.4.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.4.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.5            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.94           | https://aws.amazon.com/cli/                                            |
@@ -352,7 +352,7 @@
 ## 3.3.0 2019/01/24
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.3.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.3.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.5            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.94           | https://aws.amazon.com/cli/                                            |
@@ -363,7 +363,7 @@
 ## 3.2.0 2019/01/18
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.2.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.2.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.4            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.91           | https://aws.amazon.com/cli/                                            |
@@ -374,7 +374,7 @@
 ## 3.1.1 2019/01/04
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.1.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.1.1             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.4            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.81           | https://aws.amazon.com/cli/                                            |
@@ -385,7 +385,7 @@
 ## 3.1.0 2019/01/03
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.1.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.1.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.4            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.81           | https://aws.amazon.com/cli/                                            |
@@ -396,7 +396,7 @@
 ## 3.0.1 2018/12/17
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.0.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.0.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.4            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.76           | https://aws.amazon.com/cli/                                            |
@@ -407,7 +407,7 @@
 ## 3.0.0
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 2.0.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 2.0.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.3            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.11           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.76           | https://aws.amazon.com/cli/                                            |
@@ -419,7 +419,7 @@
 ## 2.0.0
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 1.2.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 1.2.1             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.2            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.10           | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.37           | https://aws.amazon.com/cli/                                            |
@@ -431,7 +431,7 @@
 ## 1.1.1
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 1.1.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 1.1.1             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.1            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.8            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.37           | https://aws.amazon.com/cli/                                            |
@@ -441,7 +441,7 @@
 ## 1.1.0            
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 1.1.1             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 1.1.1             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.1            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.8            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.34           | https://aws.amazon.com/cli/                                            |
@@ -454,7 +454,7 @@ tools same as 1.0.0
 ## 1.0.0            
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
-| pypyr                 | 1.0.0             | https://github.com/pypyr/pypyr-cli                                     |
+| pypyr                 | 1.0.0             | https://github.com/pypyr/pypyr                                     |
 | go                    | 1.11.1            | https://golang.org/doc/go1.11                                          |
 | terraform             | 0.11.8            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
 | awscli                | 1.16.34           | https://aws.amazon.com/cli/                                            |

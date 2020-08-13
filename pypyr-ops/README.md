@@ -1,13 +1,13 @@
 # pypyr official docker images: pypyr-ops
 
-![pypyr pipeline runner](https://pypyr.io/images/pypyr-logo-small.png)
+![pypyr pipeline runner](https://pypyr.io/images/2x1/pypyr-taskrunner-yaml-pipeline-automation-1200x600.1bd2401e4f8071d85bcb1301128e4717f0f54a278e91c9c350051191de9d22c0.png)
 
 > *pypyr*
 >
 > pronounce how you like, but I generally say *piper* as in "piping
     down the valleys wild"
 
-pypyr is a command line interface to run pipelines defined in yaml.
+pypyr is a cli & api to run pipelines defined in yaml.
 Think of pypyr as a simple task runner that lets you run sequential
 steps.
 
@@ -64,7 +64,7 @@ $ docker run pypyr/pypyr-ops magritte
 
 ### Documentation & source-code
 Find pypyr help documentation, instructions and full source code here:
-https://github.com/pypyr/pypyr-cli
+https://github.com/pypyr/pypyr
 
 The Dockerfile is here:
 https://github.com/pypyr/pypyr-docker-img/tree/master/pypyr-ops
