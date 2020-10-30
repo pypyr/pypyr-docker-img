@@ -6,27 +6,27 @@
 # build me like this from repo root:
 # docker build -t pypyr/pypyr-ops -t pypyr/pypyr-ops:latest -t pypyr/pypyr-ops:1.0.0 -f pypyr-ops/Dockerfile .
 
-FROM pypyr/pypyr-go:pypyr4.2.0-go1.15.0
+FROM pypyr/pypyr-go:pypyr4.2.0-go1.15.3
 
-ARG terraformversion=0.12.24
+ARG terraformversion=0.13.5
 
-ARG awsversion=1.18.121
+ARG awsversion=1.18.167
 
-ARG kubeversion=v1.18.8
+ARG kubeversion=v1.19.3
 
-ARG helmversion=v3.3.0
+ARG helmversion=v3.4.0
 
-ARG dockerversion=19.03.12
+ARG dockerversion=19.03.13
 
-ARG dockercompose_version=1.26.2
+ARG dockercompose_version=1.27.4
 
-ARG NODE_VERSION=12.18.3
+ARG NODE_VERSION=14.15.0
 
-ARG NPM_VERSION=6.14.7
+ARG NPM_VERSION=6.14.8
 
-ARG YARN_VERSION=1.22.4
+ARG YARN_VERSION=1.22.10
 
-ARG spinversion=1.17.3
+ARG spinversion=1.19.0
 
 RUN  apt-get update && apt-get install -y apt-transport-https &&\
   wget https://releases.hashicorp.com/terraform/${terraformversion}/terraform_${terraformversion}_linux_amd64.zip && \
@@ -64,12 +64,14 @@ RUN  apt-get update && apt-get install -y apt-transport-https &&\
   && for key in \
   4ED778F539E3634C779C87C6D7062848A1AB005C \
   94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
+  1C050899334244A8AF75E53792EF661D867B9DFA \
   71DCFD284A79C3B38668286BC97EC7A07EDE3FC1 \
   8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600 \
   C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
   C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C \
   DD8F2338BAE7501E3DD5AC78C273792F7D83545D \
   A48C2BEE680E841632CD4E44F07496B3EB3C1762 \
+  108F52B48DB57BB0CC439B2997B01419BD92F80A \
   B9E2F5981AA6E0CD28160D9FF13993A75599653C \
   ; do \
   gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \

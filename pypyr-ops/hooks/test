@@ -1,17 +1,17 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.15'
-EXPECTED_HELM='v3.3.0'
+EXPECTED_GO='go version go1.15.3'
+EXPECTED_HELM='v3.4.0'
 EXPECTED_PYPYR='pypyr 4.2.0'
-EXPECTED_TERRAFORM='Terraform v0.12.24'
-EXPECTED_AWS='aws-cli/1.18.121'
-EXPECTED_DOCKER='19.03.12'
-EXPECTED_DOCKER_COMPOSE='1.26.2'
-EXPECTED_KUBECTL='v1.18.8'
-EXPECTED_SPIN='version 1.17.3'
-EXPECTED_NODE='v12.18.3'
-EXPECTED_NPM='6.14.7'
-EXPECTED_YARN='1.22.4'
+EXPECTED_TERRAFORM='Terraform v0.13.5'
+EXPECTED_AWS='aws-cli/1.18.167'
+EXPECTED_DOCKER='19.03.13'
+EXPECTED_DOCKER_COMPOSE='1.27.4'
+EXPECTED_KUBECTL='v1.19.3'
+EXPECTED_SPIN='version 1.19.0'
+EXPECTED_NODE='v14.15.0'
+EXPECTED_NPM='6.14.8'
+EXPECTED_YARN='1.22.10'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which

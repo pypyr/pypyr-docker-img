@@ -1,5 +1,21 @@
 # changelog
 
+## 6.1.0 2020/10/30
+| tool                  |   version         | link                                                                   |
+| --------------------- |-------------------|------------------------------------------------------------------------|
+| pypyr                 | 4.2.0             | https://pypyr.io                                                       |
+| go                    | 1.15.3            | https://golang.org/doc/go1.15                                          |
+| helm                  | 3.4.0             | https://github.com/helm                                                |
+| terraform             | 0.13.5            | https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md        |
+| awscli                | 1.18.167          | https://aws.amazon.com/cli/                                            |
+| kubectl               | 1.19.3            | https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.17.md |
+| docker                | 19.03.13          | https://www.docker.com/                                                |
+| docker-compose        | 1.27.4            | https://www.docker.com/                                                |
+| nodejs                | 14.15.0           | https://nodejs.org/en/                                                 |
+| npm                   | 6.14.8            | https://www.npmjs.com/                                                 |
+| yarn                  | 1.22.10           | https://yarnpkg.com/en/                                                |
+| spin                  | 1.19.0            | https://www.spinnaker.io/guides/spin/cli/                              |
+
 ## 6.0.0 2020/08/17
 | tool                  |   version         | link                                                                   |
 | --------------------- |-------------------|------------------------------------------------------------------------|
