@@ -7,7 +7,7 @@
 # docker build -t pypyr/pypyr-go -t pypyr/pypyr-go:latest -t pypyr/pypyr-go:1.10 -t pypyr/pypyr-go:1.10.3 -f pypyr-go/Dockerfile .
 FROM pypyr/pypyr:4.2.0
 
-ARG goversion=1.15
+ARG goversion=1.15.3
 # username for limited user from base image
 ARG limiteduser=pypyruser
 
@@ -32,59 +32,97 @@ ENV GOLANG_VERSION=${goversion}
 
 RUN set -eux; \
 	\
-# this "case" statement is generated via "update.sh"
 	dpkgArch="$(dpkg --print-architecture)"; \
 	case "${dpkgArch##*-}" in \
-		amd64) goRelArch='linux-amd64'; goRelSha256='2d75848ac606061efe52a8068d0e647b35ce487a15bb52272c427df485193602' ;; \
-		armhf) goRelArch='linux-armv6l'; goRelSha256='6d8914ddd25f85f2377c269ccfb359acf53adf71a42cdbf53434a7c76fa7a9bd' ;; \
-		arm64) goRelArch='linux-arm64'; goRelSha256='7e18d92f61ddf480a4f9a57db09389ae7b9dadf68470d0cb9c00d734a0c57f8d' ;; \
-		i386) goRelArch='linux-386'; goRelSha256='68ce979083126694ceef60233f69efe870f54af24d81a120f76265107a9e9aab' ;; \
-		ppc64el) goRelArch='linux-ppc64le'; goRelSha256='4603736a158b3d8ac52b9245f39bf715936c801e05bb5ad7c44b1edd6d5ef6a2' ;; \
-		s390x) goRelArch='linux-s390x'; goRelSha256='8825f93caaf87465e32f298408c48b98d4180f3ddb885bd027f2926e711d23e8' ;; \
-		*) goRelArch='src'; goRelSha256='69438f7ed4f532154ffaf878f3dfd83747e7a00b70b3556eddabf7aaee28ac3a'; \
-			echo >&2; echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; echo >&2 ;; \
+	'amd64') \
+	arch='linux-amd64'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.linux-amd64.tar.gz'; \
+	sha256='010a88df924a81ec21b293b5da8f9b11c176d27c0ee3962dc1738d2352d3c02d'; \
+	;; \
+	'armhf') \
+	arch='linux-armv6l'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.linux-armv6l.tar.gz'; \
+	sha256='aacb49968d08e222c83dea7307b4523c3ae498a5d2e91cd0e480ef3f198ffef6'; \
+	;; \
+	'arm64') \
+	arch='linux-arm64'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.linux-arm64.tar.gz'; \
+	sha256='b8b88a87ada918ef5189fa5938ef4c46a4f61952a34317612aaac705f4275f80'; \
+	;; \
+	'i386') \
+	arch='linux-386'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.linux-386.tar.gz'; \
+	sha256='e2f4f9ccfebd38b112fe84572af44bb2fa230d605fcec84def9498095c1bd6ce'; \
+	;; \
+	'ppc64el') \
+	arch='linux-ppc64le'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.linux-ppc64le.tar.gz'; \
+	sha256='ea420501f9dc4bb1f0db37bb91a7d4e1bb7607bc1865c3ca51ed802477c169ad'; \
+	;; \
+	's390x') \
+	arch='linux-s390x'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.linux-s390x.tar.gz'; \
+	sha256='098b256bdee92857270a23a47b396e403be378d4cf8331611038518c921de46d'; \
+	;; \
+	*) \
+	# https://github.com/golang/go/issues/38536#issuecomment-616897960
+	arch='src'; \
+	url='https://storage.googleapis.com/golang/go1.15.3.src.tar.gz'; \
+	sha256='896a602570e54c8cdfc2c1348abd4ffd1016758d0bd086ccd9787dbfc9b64888'; \
+	echo >&2; \
+	echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; \
+	echo >&2; \
+	;; \
 	esac; \
 	\
-	url="https://golang.org/dl/go${GOLANG_VERSION}.${goRelArch}.tar.gz"; \
+	wget -O go.tgz.asc "$url.asc" --progress=dot:giga; \
 	wget -O go.tgz "$url" --progress=dot:giga; \
-	echo "${goRelSha256} *go.tgz" | sha256sum -c -; \
+	echo "$sha256 *go.tgz" | sha256sum --strict --check -; \
+	\
+	# https://github.com/golang/go/issues/14739#issuecomment-324767697
+	export GNUPGHOME="$(mktemp -d)"; \
+	# https://www.google.com/linuxrepositories/
+	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 'EB4C 1BFD 4F04 2F6D DDCC EC91 7721 F63B D38B 4796'; \
+	gpg --batch --verify go.tgz.asc go.tgz; \
+	gpgconf --kill all; \
+	rm -rf "$GNUPGHOME" go.tgz.asc; \
+	\
 	tar -C /usr/local -xzf go.tgz; \
 	rm go.tgz; \
 	\
-# https://github.com/golang/go/issues/38536#issuecomment-616897960
-	if [ "$goRelArch" = 'src' ]; then \
-		savedAptMark="$(apt-mark showmanual)"; \
-		apt-get update; \
-		apt-get install -y --no-install-recommends golang-go; \
-		\
-		goEnv="$(go env | sed -rn -e '/^GO(OS|ARCH|ARM|386)=/s//export \0/p')"; \
-		eval "$goEnv"; \
-		[ -n "$GOOS" ]; \
-		[ -n "$GOARCH" ]; \
-		( \
-			cd /usr/local/go/src; \
-			./make.bash; \
-		); \
-		\
-		apt-mark auto '.*' > /dev/null; \
-		apt-mark manual $savedAptMark > /dev/null; \
-		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-		rm -rf /var/lib/apt/lists/*; \
-		\
-# pre-compile the standard library, just like the official binary release tarballs do
-		go install std; \
-# go install: -race is only supported on linux/amd64, linux/ppc64le, linux/arm64, freebsd/amd64, netbsd/amd64, darwin/amd64 and windows/amd64
-#		go install -race std; \
-		\
-# remove a few intermediate / bootstrapping files the official binary release tarballs do not contain
-		rm -rf \
-			/usr/local/go/pkg/*/cmd \
-			/usr/local/go/pkg/bootstrap \
-			/usr/local/go/pkg/obj \
-			/usr/local/go/pkg/tool/*/api \
-			/usr/local/go/pkg/tool/*/go_bootstrap \
-			/usr/local/go/src/cmd/dist/dist \
-		; \
+	if [ "$arch" = 'src' ]; then \
+	savedAptMark="$(apt-mark showmanual)"; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends golang-go; \
+	\
+	goEnv="$(go env | sed -rn -e '/^GO(OS|ARCH|ARM|386)=/s//export \0/p')"; \
+	eval "$goEnv"; \
+	[ -n "$GOOS" ]; \
+	[ -n "$GOARCH" ]; \
+	( \
+	cd /usr/local/go/src; \
+	./make.bash; \
+	); \
+	\
+	apt-mark auto '.*' > /dev/null; \
+	apt-mark manual $savedAptMark > /dev/null; \
+	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+	rm -rf /var/lib/apt/lists/*; \
+	\
+	# pre-compile the standard library, just like the official binary release tarballs do
+	go install std; \
+	# go install: -race is only supported on linux/amd64, linux/ppc64le, linux/arm64, freebsd/amd64, netbsd/amd64, darwin/amd64 and windows/amd64
+	#		go install -race std; \
+	\
+	# remove a few intermediate / bootstrapping files the official binary release tarballs do not contain
+	rm -rf \
+	/usr/local/go/pkg/*/cmd \
+	/usr/local/go/pkg/bootstrap \
+	/usr/local/go/pkg/obj \
+	/usr/local/go/pkg/tool/*/api \
+	/usr/local/go/pkg/tool/*/go_bootstrap \
+	/usr/local/go/src/cmd/dist/dist \
+	; \
 	fi; \
 	\
 	go version
