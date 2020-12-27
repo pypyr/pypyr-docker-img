@@ -7,7 +7,7 @@
 # docker build -t pypyr/pypyr-go -t pypyr/pypyr-go:latest -t pypyr/pypyr-go:1.10 -t pypyr/pypyr-go:1.10.3 -f pypyr-go/Dockerfile .
 FROM pypyr/pypyr:4.4.0
 
-ARG goversion=1.15.5
+ARG goversion=1.15.6
 # username for limited user from base image
 ARG limiteduser=pypyruser
 
@@ -36,39 +36,39 @@ RUN set -eux; \
 	case "${dpkgArch##*-}" in \
 	'amd64') \
 	arch='linux-amd64'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.linux-amd64.tar.gz'; \
-	sha256='010a88df924a81ec21b293b5da8f9b11c176d27c0ee3962dc1738d2352d3c02d'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.linux-amd64.tar.gz'; \
+	sha256='3918e6cc85e7eaaa6f859f1bdbaac772e7a825b0eb423c63d3ae68b21f84b844'; \
 	;; \
 	'armhf') \
 	arch='linux-armv6l'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.linux-armv6l.tar.gz'; \
-	sha256='aacb49968d08e222c83dea7307b4523c3ae498a5d2e91cd0e480ef3f198ffef6'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.linux-armv6l.tar.gz'; \
+	sha256='40ba9a57764e374195018ef37c38a5fbac9bbce908eab436370631a84bfc5788'; \
 	;; \
 	'arm64') \
 	arch='linux-arm64'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.linux-arm64.tar.gz'; \
-	sha256='b8b88a87ada918ef5189fa5938ef4c46a4f61952a34317612aaac705f4275f80'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.linux-arm64.tar.gz'; \
+	sha256='f87515b9744154ffe31182da9341d0a61eb0795551173d242c8cad209239e492'; \
 	;; \
 	'i386') \
 	arch='linux-386'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.linux-386.tar.gz'; \
-	sha256='e2f4f9ccfebd38b112fe84572af44bb2fa230d605fcec84def9498095c1bd6ce'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.linux-386.tar.gz'; \
+	sha256='ad187f02158b9a9013ef03f41d14aa69c402477f178825a3940280814bcbb755'; \
 	;; \
 	'ppc64el') \
 	arch='linux-ppc64le'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.linux-ppc64le.tar.gz'; \
-	sha256='ea420501f9dc4bb1f0db37bb91a7d4e1bb7607bc1865c3ca51ed802477c169ad'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.linux-ppc64le.tar.gz'; \
+	sha256='d4174fc217e749ac049eacc8827df879689f2246ac230d04991ae7df336f7cb2'; \
 	;; \
 	's390x') \
 	arch='linux-s390x'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.linux-s390x.tar.gz'; \
-	sha256='098b256bdee92857270a23a47b396e403be378d4cf8331611038518c921de46d'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.linux-s390x.tar.gz'; \
+	sha256='839cc6b67687d8bb7cb044e4a9a2eac0c090765cc8ec55ffe714dfb7cd51cf3a'; \
 	;; \
 	*) \
 	# https://github.com/golang/go/issues/38536#issuecomment-616897960
 	arch='src'; \
-	url='https://storage.googleapis.com/golang/go1.15.3.src.tar.gz'; \
-	sha256='896a602570e54c8cdfc2c1348abd4ffd1016758d0bd086ccd9787dbfc9b64888'; \
+	url='https://storage.googleapis.com/golang/go1.15.6.src.tar.gz'; \
+	sha256='890bba73c5e2b19ffb1180e385ea225059eb008eb91b694875dd86ea48675817'; \
 	echo >&2; \
 	echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; \
 	echo >&2; \
