@@ -3,7 +3,7 @@
 # 3-stretch implies release versions >=3.6.5
 FROM python:3-buster
 # version of pypyr to install. This version must exist on pypi.
-ARG pypyrversion=4.4.0
+ARG pypyrversion=4.4.1
 # awsversion: version of pypyraws to install. This version must exist on pypi.
 ARG awsversion=1.2.0
 # slackversion: version of pypyrslack to install. This version must exist on pypi.
