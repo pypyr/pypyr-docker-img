@@ -68,7 +68,7 @@ links back to this repo and with the README file in the description.
 Dockercloud has build rules on it looking for tags in format _imagename-tags_.
 Tags is a comma delimited string of all the tags to apply to the image.
 
-To deploy, git tag code once PRd into master with the appropriate tags.
+To deploy, git tag code once PRd into main branch with the appropriate tags.
 
 To build a new version:
 1. update `imagename/Dockerfile`

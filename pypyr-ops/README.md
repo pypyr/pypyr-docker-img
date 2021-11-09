@@ -67,7 +67,7 @@ Find pypyr help documentation, instructions and full source code here:
 https://github.com/pypyr/pypyr
 
 The Dockerfile is here:
-https://github.com/pypyr/pypyr-docker-img/tree/master/pypyr-ops
+https://github.com/pypyr/pypyr-docker-img/tree/main/pypyr-ops
 
 ### Run a pipeline
 
@@ -189,8 +189,8 @@ $ docker run -v ${PWD}:/src myrepo/my-pypyr-child mypipelinename
 ```
 
 ## Version History
-See [history.md](https://github.com/pypyr/pypyr-docker-img/blob/master/pypyr-ops/history.md) for details.
+See [history.md](https://github.com/pypyr/pypyr-docker-img/blob/main/pypyr-ops/history.md) for details.
 
 ## License
 pypyr is cheerfully open source under the Apache License. License information
-[here](https://github.com/pypyr/pypyr-docker-img/blob/master/LICENSE)
+[here](https://github.com/pypyr/pypyr-docker-img/blob/main/LICENSE)

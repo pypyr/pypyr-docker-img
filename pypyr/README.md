@@ -128,4 +128,4 @@ $ docker run myrepo/my-pypyr-child -v ${PWD}:/src pypyr/pypyr mypipelinename
 
 ## License
 pypyr is cheerfully open source under the Apache License. License information
-[here](https://github.com/pypyr/pypyr-docker-img/blob/master/LICENSE)
+[here](https://github.com/pypyr/pypyr-docker-img/blob/main/LICENSE)
