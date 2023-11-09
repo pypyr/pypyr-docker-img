@@ -1,17 +1,17 @@
 #!/bin/bash -xe
 
-EXPECTED_GO='go version go1.15.7'
-EXPECTED_HELM='v3.5.1'
+EXPECTED_GO='go version go1.21.4'
+EXPECTED_HELM='v3.13.0'
 EXPECTED_PYPYR='pypyr 5.9.1'
-EXPECTED_TERRAFORM='Terraform v0.14.5'
-EXPECTED_AWS='aws-cli/1.18.223'
-EXPECTED_DOCKER='20.10.3'
-EXPECTED_DOCKER_COMPOSE='1.28.2'
-EXPECTED_KUBECTL='v1.20.2'
-EXPECTED_SPIN='version 1.20.0'
-EXPECTED_NODE='v14.15.4'
-EXPECTED_NPM='6.14.11'
-EXPECTED_YARN='1.22.10'
+EXPECTED_TERRAFORM='Terraform v1.6.3'
+EXPECTED_AWS='aws-cli/1.29.80'
+EXPECTED_DOCKER='24.0.7'
+EXPECTED_DOCKER_COMPOSE='2.23.0'
+EXPECTED_KUBECTL='v1.28.3'
+EXPECTED_SPIN='version 1.30.0'
+EXPECTED_NODE='v21.1.0'
+EXPECTED_NPM='10.2.3'
+EXPECTED_YARN='1.22.19'
 
 # this runs on docker cloud as part of automated build, where IMAGE_NAME is set
 # for you. For local runs, initialize using vars from ops/deploy.sh, which
@@ -44,7 +44,7 @@ DOCKERVER=$(docker run --entrypoint docker ${IMAGE_NAME} --version)
 
 # returns something like:
 # docker-compose version 1.23.2, build 1110ad01
-DOCKER_COMPOSE_VER=$(docker run --entrypoint docker-compose ${IMAGE_NAME} --version)
+DOCKER_COMPOSE_VER=$(docker run --entrypoint docker-compose ${IMAGE_NAME} version)
 
 # returns something like:
 # Client Version: version.Info{Major:"1", Minor:"12", GitVersion:"v1.12.0",
@@ -54,7 +54,7 @@ KUBECTLVER=$(docker run --entrypoint kubectl ${IMAGE_NAME} version --client)
 
 # returns something like:
 # version 1.5.3
-SPINVER=$(docker run --entrypoint spin ${IMAGE_NAME} --version)
+SPINVER=$(docker run --platform linux/x86_64 --entrypoint spin ${IMAGE_NAME} --version)
 
 NODEVER=$(docker run --entrypoint node ${IMAGE_NAME} -v)
 NPMVER=$(docker run --entrypoint npm ${IMAGE_NAME} -v)

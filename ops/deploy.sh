@@ -31,7 +31,7 @@ echo docker build -t ${REPO}/${DEPLOYPREFIX}:${TAGS_PLUS_LATEST//,/ -t ${REPO}/$
 read -rsp $'Press enter to continue...\n'
 
 # build
-docker build -t ${REPO}/${DEPLOYPREFIX}:${TAGS_PLUS_LATEST//,/ -t ${REPO}/${DEPLOYPREFIX}:} -f ${DEPLOYPREFIX}/Dockerfile .
+docker build --platform linux/x86_64 -t ${REPO}/${DEPLOYPREFIX}:${TAGS_PLUS_LATEST//,/ -t ${REPO}/${DEPLOYPREFIX}:} -f ${DEPLOYPREFIX}/Dockerfile .
 
 echo "build done for ${REPO}/${DEPLOYPREFIX}"
 echo "running tests"
